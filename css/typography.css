@@ -1,0 +1,90 @@
+
+
+
+:root {
+    font-family: "Bahnschrift";
+
+    /* font weighting */
+    --font-weight-reg: 100;
+    --font-weight-semiBold:600;
+    --font-weight-bold:800;
+
+    /* typography scale */
+    --text-size: 20px;
+    --text-size-l: 30px;
+    --text-size-xl: 36px;
+}
+
+#logo {
+    font-size: var(--text-size-xl);
+    font-weight: var(--font-weight-bold);
+    }
+
+h1 {
+    
+    font-size: var(--text-size-xl);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    text-underline-offset: 10px;
+    margin:2rem;
+    font-stretch: condensed;
+}
+
+h2 {
+    font-size: var(--text-size-l);
+    font-weight: var(--font-weight-semibold);
+    font-stretch: condensed;
+}
+
+p {
+    font-size: var(--text-size);
+    font-weight: var(--font-weight-reg);
+    margin-left:2rem;
+    margin-right:2rem;
+}
+
+::placeholder {
+    font-size: var(--text-size);
+    font-weight: var(--font-weight-reg);
+    margin-left:1rem;
+}
+
+input[type="text"] {
+    font-size: var(--text-size);
+    font-weight: var(--font-weight-reg);
+    margin-left:1rem;
+    border-style: 1px solid;
+    border-radius:10px;
+    padding:10px;
+    font-family: "Bahnschrift";
+    font-stretch: condensed;
+  }
+
+input[type="date"] {
+    font-size: var(--text-size);
+    font-weight: var(--font-weight-reg);
+    margin-left:1rem;
+    border-style: 1px solid;
+    border-radius:10px;
+    padding:10px;
+    font-family: "Bahnschrift";
+    font-stretch: condensed;
+  }
+
+select {
+    font-size: var(--text-size);
+    font-weight: var(--font-weight-reg);
+    margin-left:1rem;
+    border-style: 1px solid;
+    border-radius:10px;
+    padding:10px;
+    font-family: "Bahnschrift";
+    font-stretch: condensed;
+  }
+
+.button {
+    font-size: var(--text-size-l);
+    font-weight: var(--font-weight-semibold);
+    font-stretch: condensed;
+}
+

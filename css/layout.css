@@ -1,0 +1,164 @@
+/* MOBILE LAYOUT */
+
+
+body{
+    list-style-type: disc;
+}
+
+#logo {
+  margin:20px;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cluster > * {
+  margin: 1rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height:100%;
+}
+
+.stack > * + * {
+  margin-top: 1rem;
+}
+
+.stack > :nth-last-child(1){
+  margin-top: 3rem;
+}
+
+.centre {
+  box-sizing: content-box;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.navBar-mobile{
+  text-align: center;
+  align-items: center;
+  padding:1rem;
+}
+
+#navPage{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 999;
+}
+
+.slideContainer{
+  margin: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden; 
+  object-fit: cover;
+  object-position: center;
+}
+
+.slideContainer--home {
+  width: 400px;
+  height: 500px;
+  margin-top:90px;
+}
+
+.slideContainer--about{
+  width: 450px;
+  height: 300px; 
+}
+
+.slideImages-home {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  
+.slideImages-home.show {
+    display: block;
+    animation-name: fadeIn;
+    animation-duration: 0.6s;
+  }
+
+  .slideImages-about {
+    display: none;
+    margin-bottom:1rem;
+    margin-top: 90px;
+    align-items:center;
+    width: 600px;
+    height: 400px;
+  }
+  
+.slideImages-about.show {
+    display: block;
+    animation-name: fadeIn;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .button {
+    display: inline-block;
+    text-decoration:none;
+    vertical-align: middle;
+    text-align: center;
+    text-transform:uppercase;
+    padding: 0.75rem 1.5rem;
+    align-items: center;
+}
+
+ul{
+  text-align: center;
+  align-items: center;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+.icon--small {
+    width:24px;
+    height:24px;
+}
+
+.icon--rt{
+  justify-content: flex-end;
+}
+
+.bookForm-container{ /* PC container */
+  width: 80%;
+	margin: auto;
+	padding: 20px;
+}
+
+@media (max-width: 600px){ /* mobile container */
+  .bookForm-container{
+    width: 90%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 10px;
+  }
+}
+
+

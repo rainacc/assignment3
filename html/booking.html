@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/color.css">
+    <link rel="stylesheet" type="text/css" href="../css/typography.css">
+    <script src="../js/interaction.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        <!--Navigation page for mobile version (Click menu icon to open)-->
+        <div id="navPage" class="navBar-mobile stack">
+            <div class="cluster">
+                <p id = "logo"> SOKO </p>
+                <a id="closeNavPageButton" class = "icon icon--small" onclick="closeNav()">
+                    <img src="../images/icons/cancelButton.png" alt="close navigation button png">
+                </a> 
+            </div>
+            <div class="stack centre">
+                <ul> 
+                    <li><a class="button" href="index.html">HOME</a></li>
+                    <li><a class="button" href="about.html">ABOUT US</a></li>
+                    <li><a class="button"  href="ourFoods.html">OUR FOODS</a></li>
+                    <li><a class="button"  href="findUs.html">FIND US</a></li>
+                    <li><a class="button button--primary" href="booking.html" >BOOK A TABLE</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <nav class="navBar_mobile cluster">
+            <!--Navigation Bar-->
+               <p id = "logo"> SOKO </p>
+           <div class="cluster">
+               <a id="navButton" class = "icon icon--small" onmouseover="changeNavButton()" onmouseout="resetNavButton()" onclick="openNav()">
+                   <img src="../images/icons/navButton.png" alt="Navigation icon png">
+               </a> 
+           </div>
+       </nav>
+
+    <h1>BOOK A TABLE</h1>
+    <form class="bookForm-container">
+        <div id="page1">
+        <h2 class="h2--black">Reservation Details</h2>
+        <ul class="form stack">
+            <li><input id="date" type="date" name="date"></li>
+            <script src="../js/booking.js"></script>
+		    <li><select>
+            <option value="selectTime" disabled selected hidden>Select Reservation Time</option>
+            <option>12:00 pm</option>
+            <option>12:30 pm</option>
+            <option>1:00 pm</option>
+            <option>1:30 pm</option>
+            <option>5:00 pm</option>
+            <option>5:30 pm</option>
+            </select></li>
+            <li><select>
+                <option value="selectGuests" disabled selected hidden>Select Number of Guests</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                </select></li>
+        </ul>
+<div class="centre">
+    <button type="button" id="next1" class="button button--secondary">NEXT</button>
+</div>
+</div>
+</form>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/color.css">
+    <link rel="stylesheet" type="text/css" href="../css/typography.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/interaction.js"></script>
+    <!--Navigation page for mobile version (Click menu icon to open)-->
+    <div id="navPage" class="navBar-mobile stack">
+        <div class="cluster">
+            <p id = "logo"> SOKO </p>
+            <a id="closeNavPageButton" class = "icon icon--small" onclick="closeNav()">
+                <img src="../images/icons/cancelButton.png" alt="close navigation button png">
+            </a> 
+        </div>
+        <div class="stack">
+            <ul class="centre"> 
+                <li><a class="button" href="index.html">HOME</a></li>
+                <li><a class="button" href="about.html">ABOUT US</a></li>
+                <li><a class="button"  href="ourFoods.html">OUR FOODS</a></li>
+                <li><a class="button"  href="findUs.html">FIND US</a></li>
+            <li><a class="button button--primary" href="booking.html" >BOOK A TABLE</a></li>
+            </ul>
+        </div>
+    </div>
+
+<nav class="navBar_mobile cluster">
+     <!--Navigation Bar-->
+        <p id = "logo"> SOKO </p>
+    <div class="cluster">
+        <a id="navButton" class = "icon icon--small" onmouseover="changeNavButton()" onmouseout="resetNavButton()" onclick="openNav()">
+            <img src="../images/icons/navButton.png" alt="Navigation icon png">
+        </a> 
+    </div>
+</nav>
+
+    <div class="stack">
+        <!--slideshow for home page-->
+        <div class="slideContainer slideContainer--home">
+            <img src="../images/photos/slideImage1.jpg" class="slideImages-home">
+            <img src="../images/photos/slideImage2.jpg" class="slideImages-home">
+            <img src="../images/photos/slideImage3.jpg" class="slideImages-home">
+        </div>
+
+        <!--text description-->
+        <p class="centre">KOREAN CHARCOAL BBQ</p>
+        <div class="centre">
+        <a href="booking.html" class="button button--primary">BOOK A TABLE</a>
+        </div>
+    </div>
+</body>
+</html>
