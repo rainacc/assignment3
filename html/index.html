@@ -8,52 +8,56 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
     <link rel="stylesheet" type="text/css" href="../css/color.css">
     <link rel="stylesheet" type="text/css" href="../css/typography.css">
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
     <title>Document</title>
 </head>
 <body>
     <script src="../js/interaction.js"></script>
     <!--Navigation page for mobile version (Click menu icon to open)-->
-    <div id="navPage" class="navBar-mobile stack">
-        <div class="cluster">
+<nav>
+    <div>
+        <div id="navPage" class="navButtons cluster">
             <p id = "logo"> SOKO </p>
-            <a id="closeNavPageButton" class = "icon icon--small" onclick="closeNav()">
-                <img src="../images/icons/cancelButton.png" alt="close navigation button png">
-            </a> 
-        </div>
-        <div class="stack">
-            <ul class="centre"> 
+            <ul class="navBar cluster"> 
                 <li><a class="button" href="index.html">HOME</a></li>
                 <li><a class="button" href="about.html">ABOUT US</a></li>
                 <li><a class="button"  href="ourFoods.html">OUR FOODS</a></li>
                 <li><a class="button"  href="findUs.html">FIND US</a></li>
-            <li><a class="button button--primary" href="booking.html" >BOOK A TABLE</a></li>
+                <li><a class="button button--primary" href="booking.html" >BOOK A TABLE</a></li>
             </ul>
         </div>
-    </div>
 
-<nav class="navBar_mobile cluster">
-     <!--Navigation Bar-->
-        <p id = "logo"> SOKO </p>
-    <div class="cluster">
-        <a id="navButton" class = "icon icon--small" onmouseover="changeNavButton()" onmouseout="resetNavButton()" onclick="openNav()">
-            <img src="../images/icons/navButton.png" alt="Navigation icon png">
+
+
+        <div class="cluster">
+        <a id="navButton" class = "icon icon--small" onclick="openNav()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="27" viewBox="0 0 35 27"><defs><style>.a{fill:none;stroke:#f29d35;stroke-linecap:square;stroke-width:3px;}</style></defs><g transform="translate(1.5 1.5)"><line class="a" x2="32"/><line class="a" x2="32" transform="translate(0 12.343)"/><line class="a" x2="32" transform="translate(0 24)"/></g></svg>
+        </a> 
+        <a id="closeNavPageButton" class = "icon icon--small" onclick="closeNav()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28.121" height="28.121" viewBox="0 0 28.121 28.121"><defs><style>.a{fill:none;stroke:#f29d35;stroke-width:3px;}</style></defs><g transform="translate(1.061 1.061)"><line class="a" x1="25.5" y2="25.5" transform="translate(0.5)"/><line class="a" x2="25.5" y2="25.5" transform="translate(0 0.5)"/></g></svg>
         </a> 
     </div>
 </nav>
 
     <div class="stack">
         <!--slideshow for home page-->
-        <div class="slideContainer slideContainer--home">
-            <img src="../images/photos/slideImage1.jpg" class="slideImages-home">
-            <img src="../images/photos/slideImage2.jpg" class="slideImages-home">
-            <img src="../images/photos/slideImage3.jpg" class="slideImages-home">
+        <div class="slideContainer">
+            <img src="../images/photos/slideImage1.jpg" class="slideImages">
+            <img src="../images/photos/slideImage2.jpg" class="slideImages">
+            <img src="../images/photos/slideImage3.jpg" class="slideImages">
         </div>
 
         <!--text description-->
-        <p class="centre">KOREAN CHARCOAL BBQ</p>
+        <p>KOREAN CHARCOAL BBQ</p>
         <div class="centre">
         <a href="booking.html" class="button button--primary">BOOK A TABLE</a>
         </div>
+    </div>
+
+    <div class="centre">
+    <a class = "icon" href="about.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32.121" height="18.182" viewBox="0 0 32.121 18.182"><defs><style>.a{fill:none;stroke:#f29d35;stroke-width:3px;}</style></defs><path class="a" d="M0,0,15,15,0,30" transform="translate(31.061 1.061) rotate(90)"/></svg>
+    </a>
     </div>
 </body>
 </html>

@@ -69,6 +69,18 @@ p {
 
 .button--secondary:hover {
     color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+.button--cancel {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+.button--cancel:hover {
+    color: var(--color-white);
+    background-color: var(--color-black);
 }
 
 .bookForm-container{ /* PC container */

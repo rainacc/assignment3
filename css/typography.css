@@ -10,9 +10,10 @@
     --font-weight-bold:800;
 
     /* typography scale */
-    --text-size: 20px;
-    --text-size-l: 30px;
-    --text-size-xl: 36px;
+    font-size: 18px;
+    --text-size: 1rem;
+    --text-size-l: 1.5rem;
+    --text-size-xl: 1.8rem;
 }
 
 #logo {
@@ -39,8 +40,8 @@ h2 {
 p {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
-    margin-left:2rem;
-    margin-right:2rem;
+    margin-left:2em;
+    margin-right:2em;
 }
 
 ::placeholder {
@@ -52,10 +53,10 @@ p {
 input[type="text"] {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
-    margin-left:1rem;
+    text-align: left;
     border-style: 1px solid;
     border-radius:10px;
-    padding:10px;
+    padding:0.5rem;
     font-family: "Bahnschrift";
     font-stretch: condensed;
   }
@@ -63,10 +64,10 @@ input[type="text"] {
 input[type="date"] {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
-    margin-left:1rem;
+    text-align: left;
     border-style: 1px solid;
     border-radius:10px;
-    padding:10px;
+    padding:0.5rem;
     font-family: "Bahnschrift";
     font-stretch: condensed;
   }
@@ -86,5 +87,6 @@ select {
     font-size: var(--text-size-l);
     font-weight: var(--font-weight-semibold);
     font-stretch: condensed;
+    font-family: "Bahnschrift";
 }
 
