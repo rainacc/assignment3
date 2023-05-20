@@ -172,7 +172,15 @@ form{
 label {
   text-align:left;
   display:flex;
+  flex-direction:row;
   margin-bottom:0.1rem;
+}
+
+.errorMessage {
+  display:none;
+  margin-top:0.2rem;
+  text-align:left;
+  position:relative;
 }
 
 @media (max-width: 600px){ /* mobile container */

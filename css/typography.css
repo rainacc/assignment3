@@ -48,23 +48,14 @@ p {
     margin-left:1rem;
 }
 
-input[type="text"] {
+input[type="text"], [type="tel"], [type="select"], [type="email"], [type="date"] {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
     text-align: left;
     border-style: 1px solid;
     border-radius:10px;
-    padding:0.5rem;
-    font-family: "Bahnschrift";
-    font-stretch: condensed;
-  }
-
-input[type="date"] {
-    font-size: var(--text-size);
-    font-weight: var(--font-weight-reg);
-    text-align: left;
-    border-style: 1px solid;
-    border-radius:10px;
+    display:flex;
+    flex-direction:row;
     padding:0.5rem;
     font-family: "Bahnschrift";
     font-stretch: condensed;
@@ -80,6 +71,7 @@ select {
     font-family: "Bahnschrift";
     font-stretch: condensed;
   }
+
 
 .button {
     font-size: var(--text-size-l);

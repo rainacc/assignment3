@@ -3,6 +3,7 @@
 --color-white: #FFFFFF;
 --color-primary: #F29D35;
 --color-secondary: #7F7F7F;
+--color-error: #F23535;
 }
 
 body{
@@ -96,7 +97,15 @@ input::placeholder {
     border-radius: 10px;
   }
   
-  .error-message {
-    color: red;
-    font-size: 12px;
+input:invalid {
+    border: 2px solid;
+    border-color: var(--color-error);
+}
+
+input:focus:invalid {
+    border-color: var(--color-black);
+}
+
+.errorMessage {
+    color: var(--color-error);
 }

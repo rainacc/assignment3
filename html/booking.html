@@ -62,12 +62,16 @@
     <h2 class="h2--black">Contact Information</h2>
     <ul class="stack">
         <li><label for="name-id">Full Name</label>
-            <input id="name-id" type="text" placeholder="John Smith"></li>
+            <input id="name-id" type="text" placeholder="John Smith" onchange="checkName()">
+            <p id="nameErrorMessage" class="errorMessage">Please enter your full name containing letters only. e.g. John Smith</p></li>
 
         <li><label for="phone-id">Phone Number</label>
-                <input id="phone-id" type="tel" placeholder="0410000000" pattern="[0-9]{10}" required></li>
+                <input id="phone-id" type="tel" placeholder="0400000000" pattern="[0-9]{10}" onchange="checkPhone()">
+                <p id="phoneErrorMessage" class="errorMessage">Please input a valid phone number containing 10 numbers e.g.0412345678.</p></li>
+
         <li><label for="email-id">Email Address</label>
-        <input id="email-id" type="email" placeholder="example@mail.com"></li>
+        <input id="email-id" type="email" placeholder="example@mail.com" onchange="checkEmail()">
+        <p id="emailErrorMessage" class="errorMessage">Please input a valid email address. e.g. example@mail.com</p></li>
     </ul>
     <br>
     <p class="p--black">*Booking deposit is $1 per person.</p>
@@ -81,10 +85,39 @@
     <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
         <button type="button" class="button button--cancel" onclick="prevBookStep(2)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="if (validateForm(2) && checkPhone()) nextBookStep(2)">NEXT</button>
+        <button type="button" class="button button--secondary" onclick="if (checkName() && checkEmail() && checkPhone() && validateForm(2)) nextBookStep(2)">NEXT</button>
     </div>
 </div>
 </form>
+
+<form id="step3" class="bookForm-container stack">
+    <h2 class="h2--black">Choose Your Payment Method</h2>
+    <ul class="stack">
+        <li><label for="name-id">Full Name</label>
+            <input id="name-id" type="text" placeholder="John Smith" onchange="checkName()">
+            <p id="nameErrorMessage" class="errorMessage">Please enter your full name containing letters only. e.g. John Smith</p></li>
+
+        <li><button type="button" id="creditCard" class="button button--secondary">Credit Card</button>
+                </li>
+
+    </ul>
+    <br>
+    <p class="p--black">*Booking deposit is $1 per person.</p>
+    <svg class="line-container" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="3" x2="100%" y2="3" stroke="#f29d35" stroke-width="3">
+    </svg>
+    <div class="cluster">
+    <h2 class="h2--black">Booking Fee:</h2>
+    <h2 class="h2--black bookFee">$0.00</h2>
+    </div>
+    <p class="p--secondary rt"> (GST Included)</p>
+     <div class="centre">
+        <button type="button" class="button button--cancel" onclick="prevBookStep(3)">BACK</button>
+        <button type="button" class="button button--secondary" onclick="if (nextBookStep(3)">NEXT</button>
+    </div>
+</div>
+</form>
+
 <script src="../js/validation.js"></script>
 </body>
 </html>

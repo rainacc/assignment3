@@ -35,12 +35,61 @@ function calBookFee(n){
       }
 }
 
+//Validate user input for full name
+function checkName() {
+    let nameInput = document.getElementById("name-id");
+    let name = nameInput.value.trim(); // Remove extra whitespace
+    
+    let nameErrorMessage = document.getElementById("nameErrorMessage");
+    let nameParts = name.split(" ");
+    
+    if (!/^[a-zA-Z-'. ]+$/.test(name) || nameParts.length < 2) {
+        //Set to invalid display and return error
+        nameErrorMessage.style.display = "block";
+        nameInput.setCustomValidity("Invalid name");
+    return false;
+    } 
+    //Set to normal display and enable user to proceed
+    nameErrorMessage.style.display = "none";
+    nameInput.setCustomValidity("");
+    return true;
+  }
 
-function checkPhone() {
-    let phoneInput = document.getElementById("phone-id");
-    if (phoneInput.validity.patternMismatch) {
-        alert("Please enter a valid phone number.");
+//Validate user input for email address
+function checkEmail() {
+    let email = document.getElementById("email-id");
+    let emailValue = email.value;
+    let emailErrorMessage = document.getElementById("emailErrorMessage");
+    if (
+      emailValue.indexOf(" ") !== -1 ||  //check no blank input
+      emailValue.indexOf("@") < 1 || //checking if the @ sign at least 1 character from the beginning and 5 characters from the end of the string
+      emailValue.indexOf("@") > emailValue.length - 5 || 
+      emailValue.indexOf(".") - emailValue.indexOf("@") < 2 || 
+      emailValue.indexOf(".") > emailValue.length - 3 //2-4 characters following the @ to have valid domain name
+    ) { //Set to invalid display and return error
+        email.setCustomValidity("Invalid email address"); 
+        emailErrorMessage.style.display = "block";
         return false;
+      } 
+    //Set to normal display and enable user to proceed
+    email.setCustomValidity("");
+    emailErrorMessage.style.display = "none";
+    return true;
+      
     }
+
+//Validate user input for phone number
+function checkPhone() {
+    let phone = document.getElementById("phone-id");
+    if (phone.validity.patternMismatch) { //Phone number should contain numbers from 0~9 and in 10 digits
+    //set to invalid display and return error
+        phone.setCustomValidity("Invalid phone number");
+        phoneErrorMessage.style.display = "block";
+        return false;
+    } 
+    //set to normal display and enable user to proceed
+    phone.setCustomValidity("");
+    phoneErrorMessage.style.display = "none";
     return true;
 }
+    
