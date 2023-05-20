@@ -2,7 +2,7 @@
 --color-black: #000000;
 --color-white: #FFFFFF;
 --color-primary: #F29D35;
---color-unfill: #7F7F7F;
+--color-secondary: #7F7F7F;
 }
 
 body{
@@ -37,8 +37,13 @@ p {
 .p--black {
     color: var(--color-black);
 }
-.p--unfill {
-    color: var(--color-unfill);
+
+.p--secondary {
+    color: var(--color-secondary);
+}
+
+input::placeholder {
+    color: var(--color-secondary);
 }
 
 .button {
@@ -91,3 +96,7 @@ p {
     border-radius: 10px;
   }
   
+  .error-message {
+    color: red;
+    font-size: 12px;
+}

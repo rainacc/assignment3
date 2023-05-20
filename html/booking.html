@@ -19,8 +19,8 @@
         <h2 class="h2--black">Reservation Details</h2>
         <ul>
             <li><label for="guests-id">Guest Number</label>
-                <select id="guests-id">
-                    <option value="selectGuests" disabled selected hidden>Select Number of Guests</option>
+                <select id="guests-id" onchange="calBookFee(this.value)">
+                    <option disabled selected hidden>Select Number of Guests</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -29,12 +29,12 @@
                     <option>6</option>
                 </select></li>
 
-            <label for="date-id">Reservation Date</label>
-            <li><input id="date-id" type="date" name="date"></li>
+            <li><label for="date-id">Reservation Date</label>
+            <input id="date-id" type="date" name="date"></li>
 
 		    <li><label for = "time-id">Reservation Time</label>
             <select id="time-id">
-                <option value="selectTime" disabled selected hidden>Select the desired time</option>
+                <option disabled selected hidden>Select the desired time</option>
                 <option>12:00 pm</option>
                 <option>12:30 pm</option>
                 <option>1:00 pm</option>
@@ -43,32 +43,48 @@
                 <option>5:30 pm</option>
             </select></li>
         </ul>
-         <div class="centre">
-            <button type="button" class="button button--secondary" onclick="nextBookStep(1)">NEXT</button>
+        <br>
+            <p class="p--black">*Booking deposit is $1 per person.</p>
+            <svg class="line-container" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="3" x2="100%" y2="3" stroke="#f29d35" stroke-width="3">
+            </svg>
+            <div class="cluster">
+            <h2 class="h2--black">Booking Fee:</h2>
+            <h2 id="bookFee" class="h2--black bookFee">$0.00</h2>
+            </div>
+            <p class="p--secondary rt"> (GST Included)</p>
+         <div class="cluster">
+            <button type="button" class="button button--secondary" onclick="if (validateForm(1)) nextBookStep(1)">NEXT</button>
         </div>
-    </div>
 </form>
 
 <form id="step2" class="bookForm-container stack">
     <h2 class="h2--black">Contact Information</h2>
     <ul class="stack">
         <li><label for="name-id">Full Name</label>
-            <input id="name-id" type="text"></li>
+            <input id="name-id" type="text" placeholder="John Smith"></li>
 
         <li><label for="phone-id">Phone Number</label>
-                <input id="phone-id" type="text"></li>
-
+                <input id="phone-id" type="tel" placeholder="0410000000" pattern="[0-9]{10}" required></li>
         <li><label for="email-id">Email Address</label>
-        <input id="email-id" type="text"></li>
+        <input id="email-id" type="email" placeholder="example@mail.com"></li>
     </ul>
-
+    <br>
+    <p class="p--black">*Booking deposit is $1 per person.</p>
+    <svg class="line-container" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="3" x2="100%" y2="3" stroke="#f29d35" stroke-width="3">
+    </svg>
+    <div class="cluster">
+    <h2 class="h2--black">Booking Fee:</h2>
+    <h2 class="h2--black bookFee">$0.00</h2>
+    </div>
+    <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
-        <button type="button" class="button button--cancel" onclick="goBackBookStep(2)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="nextBookStep(2)">NEXT</button>
+        <button type="button" class="button button--cancel" onclick="prevBookStep(2)">BACK</button>
+        <button type="button" class="button button--secondary" onclick="if (validateForm(2) && checkPhone()) nextBookStep(2)">NEXT</button>
     </div>
 </div>
 </form>
-
-    
+<script src="../js/validation.js"></script>
 </body>
 </html>

@@ -22,12 +22,12 @@
     }
 
 h1 {
-    
     font-size: var(--text-size-xl);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     text-underline-offset: 10px;
-    margin:2rem;
+    margin-top:1rem;
+    margin-bottom:2rem;
     font-stretch: condensed;
 }
 
@@ -40,8 +40,6 @@ h2 {
 p {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
-    margin-left:2em;
-    margin-right:2em;
 }
 
 ::placeholder {
