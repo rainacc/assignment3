@@ -127,7 +127,7 @@ body{
     vertical-align: middle;
     text-align: center;
     text-transform:uppercase;
-    padding: 0.5rem 1.5rem;
+    padding: 0.4rem 1.5rem;
     align-items: center;
 }
 
@@ -135,9 +135,17 @@ body{
   margin:1em;
 }
 
-ul{
-  text-align: center;
-  align-items: center;
+.icon {
+  vertical-align:middle;
+  align-items:center;
+}
+
+.icon--small {
+  margin-right:0.5rem;
+}
+
+.icon--large {
+  max-height:1.5rem;
 }
 
 .icon--rt{
@@ -147,8 +155,6 @@ ul{
 .line-container {
   width: 100%;
   height:1rem;
-  margin-top:-1rem;
-  margin-bottom: -1rem;
 }
 
 .bookForm-container{ /* PC container */
@@ -165,8 +171,21 @@ form{
   display:block;
 }
 
+
 #step2 {
   display:none;
+}
+
+#step3 {
+  display:none;
+}
+
+#step4 {
+  display:none;
+}
+
+#step5{
+  display:block;
 }
 
 label {
@@ -178,7 +197,8 @@ label {
 
 .errorMessage {
   display:none;
-  margin-top:0.2rem;
+  margin-bottom:0.5rem;
+  margin-top:-0.5rem;
   text-align:left;
   position:relative;
 }

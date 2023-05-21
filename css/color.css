@@ -49,12 +49,11 @@ input::placeholder {
 
 .button {
     color: var(--color-white);
-    background-color: var(--color-black);
     border-radius: 1rem;
 }
 
 .button--primary {
-    border: 3px solid;
+    border: 2px solid;
     border-color: var(--color-primary);
 }
 
@@ -73,21 +72,17 @@ input::placeholder {
     border-color: var(--color-primary);
 }
 
-.button--secondary:hover {
+.button--secondary:hover, .button--white:hover {
     color: var(--color-white);
     background-color: var(--color-black);
 }
 
-.button--cancel {
+.button--white {
     color: var(--color-black);
     background-color: var(--color-white);
     border-color: var(--color-primary);
 }
 
-.button--cancel:hover {
-    color: var(--color-white);
-    background-color: var(--color-black);
-}
 
 .bookForm-container{ /* PC container */
     background-color: var(--color-white);
@@ -102,8 +97,12 @@ input:invalid {
     border-color: var(--color-error);
 }
 
+input:focus {
+    box-shadow: 0px 0px 5px var(--color-secondary);
+}
+
 input:focus:invalid {
-    border-color: var(--color-black);
+    border-color: var(--color-error);
 }
 
 .errorMessage {

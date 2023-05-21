@@ -16,6 +16,10 @@
     --text-size-xl: 1.8rem;
 }
 
+body {
+    font-family: "Bahnschrift";
+}
+
 #logo {
     font-size: var(--text-size-xl);
     font-weight: var(--font-weight-bold);
@@ -40,6 +44,7 @@ h2 {
 p {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
+    font-stretch: condensed;
 }
 
 ::placeholder {
@@ -48,29 +53,31 @@ p {
     margin-left:1rem;
 }
 
-input[type="text"], [type="tel"], [type="select"], [type="email"], [type="date"] {
+input {
+    font-family: "Bahnschrift";
+    font-stretch: condensed;
+}
+
+select, input[type="text"], [type="tel"], [type="email"], [type="date"], [type="number"],[type="month"] {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
     text-align: left;
-    border-style: 1px solid;
-    border-radius:10px;
+    border-style: 2px solid;
+    border-radius:0.5rem;
     display:flex;
-    flex-direction:row;
-    padding:0.5rem;
-    font-family: "Bahnschrift";
-    font-stretch: condensed;
-  }
+    padding:0.5rem 1rem;
+    margin-bottom:1rem;
+}
 
-select {
+[type="radio"] {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
-    margin-left:1rem;
-    border-style: 1px solid;
-    border-radius:10px;
-    padding:10px;
-    font-family: "Bahnschrift";
-    font-stretch: condensed;
-  }
+    transform: scale(1.5);
+    border: 2px solid;
+    border-radius:0.5rem;
+    padding:0.5rem 1rem;
+    margin:2rem 1rem;
+}
 
 
 .button {
