@@ -83,6 +83,11 @@ input::placeholder {
     border-color: var(--color-primary);
 }
 
+li:has(input[type="radio"]) {
+    border: 2px solid var(--color-primary);
+    border-radius: 1rem;
+    margin:1rem;
+}
 
 .bookForm-container{ /* PC container */
     background-color: var(--color-white);
@@ -92,17 +97,13 @@ input::placeholder {
     border-radius: 10px;
   }
   
-input:invalid {
+input:invalid, select:invalid, textarea:invalid {
     border: 2px solid;
     border-color: var(--color-error);
 }
 
-input:focus {
+input:focus, select:focus, textarea:focus {
     box-shadow: 0px 0px 5px var(--color-secondary);
-}
-
-input:focus:invalid {
-    border-color: var(--color-error);
 }
 
 .errorMessage {

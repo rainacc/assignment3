@@ -18,6 +18,7 @@ body{
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex:1 1;
 }
 
 .stack {
@@ -42,6 +43,12 @@ body{
 
 .rt {
   text-align:right;
+}
+
+.horizontal {
+  display:flex;
+  flex-direction:row;
+  vertical-align: middle;
 }
 
 /*navigation layout*/
@@ -141,6 +148,8 @@ body{
 }
 
 .icon--small {
+  display:inline-flex;
+  flex-direction:row;
   margin-right:0.5rem;
 }
 
@@ -173,15 +182,15 @@ form{
 
 
 #step2 {
-  display:none;
+  display:block;
 }
 
 #step3 {
-  display:none;
+  display:block;
 }
 
 #step4 {
-  display:none;
+  display:block;
 }
 
 #step5{
@@ -201,6 +210,14 @@ label {
   margin-top:-0.5rem;
   text-align:left;
   position:relative;
+}
+
+textarea {
+  max-width:60%;
+  min-width: 60%;
+  min-height:1rem;
+  max-height:3em;
+  overflow:scroll;
 }
 
 @media (max-width: 600px){ /* mobile container */

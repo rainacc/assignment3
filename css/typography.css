@@ -58,11 +58,12 @@ input {
     font-stretch: condensed;
 }
 
-select, input[type="text"], [type="tel"], [type="email"], [type="date"], [type="number"],[type="month"] {
+select, textarea, input[type="text"], [type="tel"], [type="email"], [type="date"], [type="number"],[type="month"] {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
+    font-family: "Bahnschrift";
     text-align: left;
-    border-style: 2px solid;
+    border: 2px solid;
     border-radius:0.5rem;
     display:flex;
     padding:0.5rem 1rem;

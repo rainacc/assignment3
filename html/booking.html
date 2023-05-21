@@ -62,16 +62,19 @@
     <br><p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
     <ul>
         <li><label for="name-id">Full Name</label>
-            <input id="name-id" type="text" placeholder="John Smith" onchange="checkName('Guest')">
+            <input id="name-id" type="text" placeholder="John Smith" autocomplete="name" pattern="^(?=.*[a-zA-Z])(?=.*\s)[a-zA-Z\s]+$" onchange="validatePattern('name-id','nameErrorMessage')">
             <p id="nameErrorMessage" class="errorMessage">Please enter your full name containing letters and space only. e.g. John Smith</p></li>
 
         <li><label for="phone-id">Phone Number</label>
-                <input id="phone-id" type="tel" placeholder="0400000000" pattern="[0-9]{10}" onchange="checkPhone()">
+                <input id="phone-id" type="tel" placeholder="0400000000" pattern="[0-9]{10}" autocomplete="mobile" onchange="validatePattern('phone-id', 'phoneErrorMessage')">
                 <p id="phoneErrorMessage" class="errorMessage">Please input a valid phone number containing 10 numbers e.g.0412345678.</p></li>
 
         <li><label for="email-id">Email Address</label>
-        <input id="email-id" type="email" placeholder="example@mail.com" onchange="checkEmail()">
+        <input id="email-id" type="email" placeholder="example@mail.com" autocomplete="email" onchange="checkEmail()">
         <p id="emailErrorMessage" class="errorMessage">Please input a valid email address. e.g. example@mail.com</p></li>
+
+        <li><label for="special-id-optional">Special Request (Optional)</label>
+            <textarea id="special-id-optional" type="text" placeholder="Enter any special requests or dietary restrictions"></textarea></li>
     </ul>
     <br>
     <p class="p--black">*Booking deposit is $1 per person.</p>
@@ -85,7 +88,7 @@
     <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
         <button type="button" class="button button--white" onclick="prevBookStep(2)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="if (validateForm(2) && checkName('Guest') && checkEmail() && checkPhone()) nextBookStep(2)">NEXT</button>
+        <button type="button" class="button button--secondary" onclick="if (validateForm(2) && validatePattern('name-id','nameErrorMessage') && checkEmail() && validatePattern('phone-id', 'phoneErrorMessage')) nextBookStep(2)">NEXT</button>
     </div>
 </div>
 </form>
@@ -94,10 +97,10 @@
     <h2 class="h2--black">Choose Your Payment Method</h2>
      <br><p class="fillAllErrorMessage errorMessage">*Please select a payment option.</p>
    <ul>
-        <li><input type="radio" class="button button--white" name="payment-option" value="paypal">
+        <li><input type="radio" name="payment-option" value="paypal">
             <img src="../images/icons/paypal.png" class="icon icon--large" alt="paypal icon"></input>
         </li>
-        <li><input type="radio" class="button button--white" name="payment-option" value="creditCard">
+        <li><input type="radio" name="payment-option" value="creditCard">
             <svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 25 19"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g class="a"><rect class="b" width="25" height="19" rx="5"/><rect class="c" x="1.5" y="1.5" width="22" height="16" rx="3.5"/></g><path class="a" d="M0,0H22.451" transform="translate(1.339 6.7)"/></svg>
             Credit Card</input></li>
     </ul>
@@ -120,15 +123,19 @@
 </form>
 
 <form id="step4" class="bookForm-container stack">
-    <h2 class="h2--black">Credit Card Details</h2>
+    <h2 class="h2--black">Payment Details</h2>
+    <div class="horizontal">
+        <svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 25 19"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g class="a"><rect class="b" width="25" height="19" rx="5"/><rect class="c" x="1.5" y="1.5" width="22" height="16" rx="3.5"/></g><path class="a" d="M0,0H22.451" transform="translate(1.339 6.7)"/></svg>
+        <p class="p--black">Credit Card</p></div>
+
     <br><p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
     <ul>
         <li><label for="cardName-id">Cardholder Name</label>
-        <input id="cardName-id" type="text" placeholder="John Smith" onchange="checkName('Card')">
+        <input id="cardName-id" type="text" placeholder="John Smith" pattern="^(?=.*[a-zA-Z])(?=.*\s)[a-zA-Z\s]+$" onchange="validatePattern('cardName-id','cardNameErrorMessage')">
         <p id="cardNameErrorMessage" class="errorMessage">Please enter your full name containing letters and space only. e.g. John Smith</p></li>
 
         <li><label for="cardNumber-id">Credit Card Number</label>
-        <input id="card-id" type="tel" pattern="[0-9\s]{14,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" onchange="checkCard()">
+        <input id="card-id" type="tel" pattern="[0-9\s]{14,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" onchange="validatePattern('card-id', 'cardErrorMessage')">
         <p id="cardErrorMessage" class="errorMessage">Please input a valid card number. e.g. 0000 0000 0000 0000</p></li>
 
         <div class="cluster">
@@ -136,7 +143,7 @@
             <input id="expireDate-id" type="month" placeholder="e.g. 24/12" autocomplete="cc-exp">
             <p id="expireDateErrorMessage" class="errorMessage">Please input a valid expire date. e.g. 24/12 for December 2024.</p></li>
         <li><label for="cvv-id">CVV/CVC</label>
-            <input id="cvv-id" type="tel" placeholder="000" pattern="[0-9]{3,4}" maxlength="4" onchange="checkCVV()">
+            <input id="cvv-id" type="tel" placeholder="000" pattern="[0-9]{3,4}" maxlength="4" onchange="validatePattern('cvv-id', 'cvvErrorMessage') ">
             <p id="cvvErrorMessage" class="errorMessage">Please input a 3~4 digit Card Verification Value (CVV) or Card Verification Code (CVC). e.g. 000</p></li>
         </div>
     </ul>
@@ -152,7 +159,7 @@
     <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
         <button type="button" class="button button--white" onclick="prevBookStep(4)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="if (checkName('Card') && validateForm(4)) nextBookStep(4)">NEXT</button>
+        <button type="button" class="button button--secondary" onclick="if (validateForm(4) && validatePattern('cardName-id','cardNameErrorMessage')) nextBookStep(4)">NEXT</button>
     </div>
 </div>
 </form>
@@ -161,17 +168,19 @@
     <h2 class="h2--black">Billing Address</h2>
     <br><p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
     <ul>
-        <li><label for="address-id">Street Address</label>
-            <input id="address-id" type="text" placeholder="e.g. 10 White St" autocomplete="street-address" pattern = "(?=\S*\s)(?=[^a-zA-Z]*[a-zA-Z])(?=\D*\d)[a-zA-Z\d\s',.#/-]*">
-            <p id="addressErrorMessage" class="errorMessage">Please enter a valid address.</p></li>
+        <li>
+            <label for="address-id">Street Address</label>
+            <textarea id="address-id" placeholder="e.g. 10 White St" autocomplete="street-address" pattern="(?=\S*\s)(?=[^a-zA-Z]*[a-zA-Z])(?=\D*\d)[a-zA-Z\d\s',.#/-]*" onchange="validatePattern('address-id', 'addressErrorMessage')"></textarea>
+            <p id="addressErrorMessage" class="errorMessage">Please enter a valid address.</p>
+          </li>
 
         <li><label for="city-id">City</label>
-        <input id="city-id" type="text"  autocomplete="address-level2"  placeholder="Sydney">
-        <p id="cityErrorMessage" class="errorMessage">Please input a valid city name.</p></li>
+        <input id="city-id" type="text"  autocomplete="address-level2"  placeholder="Melbourne" pattern="[a-zA-Z\s]+" onchange="validatePattern('city-id', 'cityErrorMessage')">
+        <p id="cityErrorMessage" class="errorMessage">Please input a valid city name containing only letters and space. e.g. Melbourne</p></li>
 
         <li><label for="state-id">State/Province</label>
-        <input id="state-id" type="text" placeholder="e.g. 24/12" autocomplete="state">
-        <p id="stateErrorMessage" class="errorMessage">Please input a valid state.</p></li>
+        <input id="state-id" type="text" placeholder="Victoria" autocomplete="state" pattern="[a-zA-Z\s]+" onchange="validatePattern('state-id', 'stateErrorMessage')">
+        <p id="stateErrorMessage" class="errorMessage">Please input a valid state containing only letters and space. e.g. Victoria</p></li>
 
         <li><label for="post-id">Postal/ZIP Code</label>
             <input id="post-id" type="tel" placeholder="0000" pattern="[0-9]{4,6}" maxlength="6" autocomplete="postal-code">
@@ -200,7 +209,36 @@
     <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
         <button type="button" class="button button--white" onclick="prevBookStep(5)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="if (validateForm(5)) nextBookStep(5)">NEXT</button>
+        <button type="button" class="button button--secondary" onclick="if (validateForm(5) && validatePattern('address-id', 'addressErrorMessage') && validatePattern('city-id', 'cityErrorMessage') && validatePattern('state-id', 'stateErrorMessage')) nextBookStep(5)">NEXT</button>
+    </div>
+</div>
+</form>
+
+<form id="step6" class="bookForm-container stack">
+    <h2 class="h2--black">Confirm Your Details</h2>
+    <br><p class="fillAllErrorMessage errorMessage">*Please tick the confirmation box.</p>
+    <ul>
+        <li class = "info-container"><p id="filledDetails">User input</p>
+        </li>
+        <li>
+            <label for="address-id">Street Address</label>
+            <textarea id="address-id" placeholder="e.g. 10 White St" autocomplete="street-address" pattern="(?=\S*\s)(?=[^a-zA-Z]*[a-zA-Z])(?=\D*\d)[a-zA-Z\d\s',.#/-]*" onchange="validatePattern('address-id', 'addressErrorMessage')"></textarea>
+            <p id="addressErrorMessage" class="errorMessage">Please enter a valid address.</p>
+        </li>
+    </ul>
+    <br>
+    <p class="p--black">*Booking deposit is $1 per person.</p>
+    <svg class="line-container" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="3" x2="100%" y2="3" stroke="#f29d35" stroke-width="3">
+    </svg>
+    <div class="cluster">
+    <h2 class="h2--black">Booking Fee:</h2>
+    <h2 class="h2--black bookFee">$0.00</h2>
+    </div>
+    <p class="p--secondary rt"> (GST Included)</p>
+     <div class="centre">
+        <button type="button" class="button button--white" onclick="prevBookStep(5)">BACK</button>
+        <button type="button" class="button button--secondary" onclick="if (validateForm(5) && validatePattern('address-id', 'addressErrorMessage') && validatePattern('city-id', 'cityErrorMessage') && validatePattern('state-id', 'stateErrorMessage')) nextBookStep(5)">NEXT</button>
     </div>
 </div>
 </form>

@@ -1,5 +1,5 @@
-
-function validateForm(n) {
+//Check if user entered all required field before proceed to next form step
+function validateForm(n) { 
   let currentFormId = "step" + n;
   let f = document.getElementById(currentFormId); // get form content
   let formInputs = f.getElementsByTagName("input");
@@ -11,7 +11,7 @@ function validateForm(n) {
       selectedPaymentOption = formInputs[i].value;
     }
 
-    if (formInputs[i].value.trim() === "" ) { // users did not enter all information
+    if (formInputs[i].value.trim() === "" && !formInputs[i].id.contains("optional")) { // users did not enter all information in required filled (ignore optional field)
       fillAllErrorMessage[i].style.display = "block"; // display the error message for the corresponding input field
       formInputs[i].setCustomValidity("Please fill in all fields."); // set custom validity message
       alert("Please fill in all fields.");
@@ -69,34 +69,6 @@ function calBookFee(n){
       }
 }
 
-//Validate user's name input in both  step2 guest name and step4 card holder
-function checkName(nameType) {
-  let nameInput, nameErrorMessage;
-  
-  if (nameType === 'Guest') {
-    nameInput = document.getElementById("name-id");
-    nameErrorMessage = document.getElementById("nameErrorMessage");
-  } else if (nameType === 'Card'){
-    nameInput = document.getElementById("cardName-id");
-    nameErrorMessage = document.getElementById("cardNameErrorMessage");
-  }
-  
-  let name = nameInput.value.trim(); // Remove extra whitespace
-  let nameParts = name.split(" ");
-    
-  if (!/^[a-zA-Z-'. ]+$/.test(name) || nameParts.length < 2) {
-    // Set to invalid display and return error
-    nameErrorMessage.style.display = "block";
-    nameInput.setCustomValidity("Invalid name");
-    return false;
-  } 
-  
-  // Set to normal display and enable user to proceed
-  nameErrorMessage.style.display = "none";
-  nameInput.setCustomValidity("");
-  return true;
-}
-
 //Validate user input for email address
 function checkEmail() {
     let email = document.getElementById("email-id");
@@ -118,55 +90,6 @@ function checkEmail() {
     emailErrorMessage.style.display = "none";
     return true;
     }
-
-//Validate user input for phone number
-function checkPhone() {
-    let phone = document.getElementById("phone-id");
-    let phoneErrorMessage = document.getElementById("phoneErrorMessage");
-    if (phone.validity.patternMismatch) { //Phone number should contain numbers from 0~9 and in 10 digits
-    //set to invalid display and return error
-        phone.setCustomValidity("Invalid phone number");
-        phoneErrorMessage.style.display = "block";
-        return false;
-    } 
-    //set to normal display and enable user to proceed
-    phone.setCustomValidity("");
-    phoneErrorMessage.style.display = "none";
-    return true;
-}
-
-//Validate CVV/CVC
-function checkCVV() {
-  let cvv = document.getElementById("cvv-id");
-  let cvvErrorMessage = document.getElementById("cvvErrorMessage");
-  if (cvv.validity.patternMismatch) { // CVV/CVC should contain numbers from 0~9 and be in 3~4 digits
-    // Set to invalid display and return error
-    cvv.setCustomValidity("Invalid CVV/CVC");
-    cvvErrorMessage.style.display = "block";
-    return false;
-  } 
-  // Set to normal display and enable user to proceed
-  cvv.setCustomValidity("");
-  cvvErrorMessage.style.display = "none";
-  return true;
-}
-
-//Validate Credit Card Number
-function checkCard() {
-  let card = document.getElementById("card-id");
-  let cardErrorMessage = document.getElementById("cardErrorMessage");
-  if (card.validity.patternMismatch) { //card number should contain numbers from 0~9 and in 14~16 digits
-  //set to invalid display and return error
-      card.setCustomValidity("Invalid card number");
-      cardErrorMessage.style.display = "block";
-      return false;
-  } 
-  //set to normal display and enable user to proceed
-  card.setCustomValidity("");
-  cardErrorMessage.style.display = "none";
-  return true;
-}
-
 
 //Define User input value in book form
 let dateInput = document.getElementById("date-id");
@@ -196,4 +119,20 @@ function checkDateTime() {
       timeInput.disabled = false;
     }
 }
-    
+
+//Validate any input field to follow the pattern and display inline error message, including Full Name/Card holder Name/card number/CVV/phone number
+function validatePattern(inputId, errorMessageId) {
+  let field = document.getElementById(inputId);
+  let errorMessage = document.getElementById(errorMessageId);
+
+  if (field.validity.patternMismatch) { 
+    //set to invalid display and return error
+    field.setCustomValidity("Invalid input format");
+    errorMessage.style.display = "block";
+    return false;
+    } 
+    //set to normal display and enable user to proceed
+    field.setCustomValidity("");
+    errorMessage.style.display = "none";
+    return true;
+}
