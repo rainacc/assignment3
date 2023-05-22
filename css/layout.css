@@ -169,7 +169,12 @@ body{
 .bookForm-container{ /* PC container */
   max-width: 80vh;
 	padding: 2rem;
+}
 
+.info-container {
+  max-width: 60vh;
+	padding: 1rem;
+  margin-bottom:1rem;
 }
 
 form{

@@ -94,9 +94,16 @@ li:has(input[type="radio"]) {
     color:var(--color-black);
     border: 3px solid;
     border-color: var(--color-primary);
-    border-radius: 10px;
+    border-radius: 1rem;
   }
-  
+
+.info-container {
+    color:var(--color-black);
+    border: 3px solid;
+    border-color: var(--color-black);
+    border-radius: 0.5rem;
+}
+
 input:invalid, select:invalid, textarea:invalid {
     border: 2px solid;
     border-color: var(--color-error);

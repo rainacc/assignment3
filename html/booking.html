@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script src="../js/booking.js"></script>
     <h1>BOOK A TABLE</h1>
     <form id="step1" class="bookForm-container stack">
         <h2 class="h2--black">Reservation Details</h2>
@@ -188,14 +188,13 @@
 
 		<li><label for = "country-id">Country</label>
             <select id="country-id">
-                <option value="au">Australia</option>
-                <option value="br">Brazil</option>
-                <option value="cn">China</option>
-                <option value="fr">France</option>
-                <option value="us">United States</option>
+                <option value="Australia">Australia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="China">China</option>
+                <option value="France">France</option>
+                <option value="United States">United States</option>
             </select>
         </li>
-            
     </ul>
     <br>
     <p class="p--black">*Booking deposit is $1 per person.</p>
@@ -209,7 +208,9 @@
     <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
         <button type="button" class="button button--white" onclick="prevBookStep(5)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="if (validateForm(5) && validatePattern('address-id', 'addressErrorMessage') && validatePattern('city-id', 'cityErrorMessage') && validatePattern('state-id', 'stateErrorMessage')) nextBookStep(5)">NEXT</button>
+        <button type="button" class="button button--secondary" 
+        onclick="if (validateForm(5) && validatePattern('address-id', 'addressErrorMessage') && validatePattern('city-id', 'cityErrorMessage') && validatePattern('state-id', 'stateErrorMessage') ) nextBookStep(5)">NEXT</button>
+    <button onclick="updateConfirmPage()" type="button">UPDATE</button>
     </div>
 </div>
 </form>
@@ -218,12 +219,15 @@
     <h2 class="h2--black">Confirm Your Details</h2>
     <br><p class="fillAllErrorMessage errorMessage">*Please tick the confirmation box.</p>
     <ul>
-        <li class = "info-container"><p id="filledDetails">User input</p>
-        </li>
+        <div class="info-container">
+            <li><p id="filledGuestDetails" class="p--black"></p></li>
+            <li><p id="filledBookDetails" class="p--black">Reservation information input:</p></li>
+            <li><p id="paymentMethod" class="button button--secondary">Payment Method</p></li>
+            <li><p id="filledAddressDetails" class="p--black">Billing Address:</p></li>
+          </div>
         <li>
-            <label for="address-id">Street Address</label>
-            <textarea id="address-id" placeholder="e.g. 10 White St" autocomplete="street-address" pattern="(?=\S*\s)(?=[^a-zA-Z]*[a-zA-Z])(?=\D*\d)[a-zA-Z\d\s',.#/-]*" onchange="validatePattern('address-id', 'addressErrorMessage')"></textarea>
-            <p id="addressErrorMessage" class="errorMessage">Please enter a valid address.</p>
+            <input type="checkbox" id="check-id">I confirm that the above booking information are correct.</input>
+            <p id="confirmErrorMessage" class="errorMessage">Please check above details are correct and tick the check box.</p>
         </li>
     </ul>
     <br>
@@ -237,12 +241,11 @@
     </div>
     <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
-        <button type="button" class="button button--white" onclick="prevBookStep(5)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="if (validateForm(5) && validatePattern('address-id', 'addressErrorMessage') && validatePattern('city-id', 'cityErrorMessage') && validatePattern('state-id', 'stateErrorMessage')) nextBookStep(5)">NEXT</button>
+        <button type="button" class="button button--white" onclick="prevBookStep(6)">BACK</button>
+        <button type="button" class="button button--secondary" onclick="if (validateForm(6)) nextBookStep(6)">NEXT</button>
     </div>
 </div>
 </form>
 
-<script src="../js/booking.js"></script>
 </body>
 </html>
