@@ -138,20 +138,20 @@ function updateConfirmPage() {
   let postalCode = document.getElementById("post-id").value;
   let country = document.getElementById("country-id").value;
 
-// Update the guest details section
-let filledGuestDetails = document.getElementById("filledGuestDetails");
-filledGuestDetails.innerHTML =
-  "Name: " + fullName + "<br>" +
-  "Phone: " + phoneNumber + "<br>" +
-  "Email: " + emailAddress;
-
 // Update the reservation details section
 let filledBookDetails = document.getElementById("filledBookDetails");
 filledBookDetails.innerHTML =
   "Date: " + bookDate + "<br>" +
   "Time: " + bookTime + "<br>" +
-  "Guests: " + guests + "<br>" +
-  "Special Request: " + specialRequest;
+  "Guests: " + guests + "<br>";
+
+// Update the guest details section
+let filledGuestDetails = document.getElementById("filledGuestDetails");
+filledGuestDetails.innerHTML =
+  "Name: " + fullName + "<br>" +
+  "Phone: " + phoneNumber + "<br>" +
+  "Email: " + emailAddress + "<br>" +
+  "Special Request: " + specialRequest + "<br><br>";
   
 // Update payment method display
   let paymentMethod = document.getElementById("paymentMethod");
