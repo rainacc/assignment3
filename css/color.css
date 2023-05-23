@@ -16,6 +16,7 @@ body{
 
 #logo {
     color: var(--color-white);
+    text-decoration: underline 3px var(--color-primary);
 }
 
 h1 {

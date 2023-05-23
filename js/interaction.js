@@ -23,19 +23,30 @@ if (window.location.pathname.endsWith("index.html")) {
   };
 }
 
-const navigationPage = document.getElementById("navPage");
-const closeNavButton = document.getElementById("closeNavPageButton");
-const openNavButton = document.getElementById("navButton");
-
+//Responsive Navigation menu on mobile website
 function openNav() {
-  var x = document.getElementById("navPage");
-  if (x.className === "navButtons") {
+  let x = document.getElementById("myNavPage");
+  let navBtn = document.getElementById("navButton");
+  let closeBtn = document.getElementById("closeButton");
+  if (x.className=== "cluster navPage") {
+    x.classList.remove("cluster");
     x.className += " responsive";
+    navBtn.style.display="none";
+    closeBtn.style.display="block";
   } else {
-    x.className = "navButtons";
+    x.className = "cluster navPage";
   }
 }
 
-function closeNav(){
-  navPage.style.display = "none";
+//Close the navigation bar
+function closeNav() {
+  let x = document.getElementById("myNavPage");
+  let navBtn = document.getElementById("navButton");
+  let closeBtn = document.getElementById("closeButton");
+  let nb = document.getElementById("navB");
+  if (x.className==="navPage responsive") {
+    closeBtn.style.display="none";
+    navBtn.style.display="block";
+    x.className = "cluster navPage";
+  }
 }

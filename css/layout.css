@@ -8,7 +8,16 @@ body{
 }
 
 #logo {
-  margin:1rem;
+  margin:1rem 0;
+}
+
+h1 {
+  margin-top:1rem;
+  margin-bottom:1.5rem;
+}
+
+form li {
+  margin-bottom:0.5rem;
 }
 
 /*layout alignment styles */
@@ -52,20 +61,29 @@ body{
 }
 
 /*navigation layout*/
+.navPage{
+  overflow:hidden;
+}
+
 .navBar{
   display:flex;
   flex-wrap:wrap;
+  justify-content: flex-end;
   text-align: center;
   align-items: center;
-  padding:1rem;
+  padding-top:1rem;
 }
 
-#navButton {
+.navButton {
   display:none; /*Hide burger icon in large screen*/
 }
 
-#closeNavPageButton {
+.closeNavButton {
   display:none;
+  position:absolute;
+  margin-top:1rem;
+  right:0;
+  top:0;
 }
 
 .show {
@@ -76,23 +94,14 @@ body{
   display:none;
 }
 
-/* #navPage{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 999;
-} */
-
 /*Home page slideshow layout*/
 .slideContainer{
   display: flex;
   overflow: hidden; 
   object-fit: cover;
-  width: 100%;
+  width: 100vw;
   height: 60vh;
+  margin-left:-4rem;
 }
 
 .slideImages {
@@ -144,6 +153,17 @@ body{
   height:50vh;
 }
 
+.scrollDownField {
+  position:relative;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  height:6vh;
+  margin-top:0.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 /*Button style*/
 .button {
     display: inline-block;
@@ -156,7 +176,8 @@ body{
 }
 
 .button--primary {
-  margin:1em;
+  margin-top:0.5rem;
+  margin-bottom:1.5rem;
 }
 
 .icon {
@@ -201,17 +222,17 @@ body{
 
 .svgtext {
   display: block;
-  padding: 0.5rem 2rem;       
-  border-radius: 0.5rem;     
+  padding: 0.5rem 2rem;         
 }
 
 .line-container {
   width: 100%;
-  height:1rem;
+  height:0.2rem;
 }
 
 .bookForm-container{ /* PC container */
   max-width: 80vh;
+  max-height:80vh;
 	padding: 2rem;
 }
 
@@ -225,32 +246,36 @@ body{
   margin-bottom:0.5rem;
 }
 
-form{
-  display:none;
-}
-
 #step1 {
   display:block;
 }
 
 #step2 {
-  display:block;
+  display:none;
 }
 
 #step3 {
-  display:block;
+  display:none;
 }
 
 #step4 {
-  display:block;
+  display:none;
 }
 
 #step5{
-  display:block;
+  display:none;
 }
 
 #step6{
-  display:block;
+  display:none;
+}
+
+#step7{
+  display:none;
+}
+
+#step8{
+  display:none;
 }
 
 label {
@@ -267,27 +292,52 @@ label {
   margin-top:0.2rem;
 }
 
+select, textarea, input[type="text"], [type="tel"], [type="email"], [type="date"], [type="number"],[type="month"] {
+  text-align: left;
+  border: 2px solid;
+  border-radius:0.5rem;
+  display:flex;
+  padding:0.5rem 1rem;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  border: 2px solid;
+  border-radius:0.5rem;
+  padding:1rem 2rem;
+  margin:1.5rem 1rem;
+}
+
+input[type="checkbox"]{
+  transform: scale(1.5);
+  padding:0.5rem 1rem;
+}
+
 textarea {
-  max-width:60%;
-  min-width: 60%;
+  max-width:90%;
+  min-width: 90%;
   min-height:1rem;
-  max-height:3em;
+  max-height:2em;
   overflow:scroll;
 }
 
 @media (max-width: 600px){ /* mobile container */
   body{
     list-style-type: disc;
-    margin-left: 2rem;
-    margin-right:2rem;
-}
-  .bookForm-container{
-    max-width: 90%;
-    padding: 1rem;
-    
+    margin-left: 1.5rem;
+    margin-right:1.5rem;
   }
 
-  #navButton {
+  .slideContainer{
+    margin-left:-1.5rem;
+  }
+
+  .bookForm-container{
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .navButton {
     float:right;
     display:block;
   }
@@ -295,7 +345,46 @@ textarea {
   .navBar {
     display:none;
   }
+
+  .navPage.responsive {
+    position: absolute;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
   }
+
+  .navPage.responsive li a{
+    float:none;
+    display:block;
+    text-align:center;
+    margin:3rem;
+  }
+
+  .navPage.responsive .navBar{
+    float:none;
+    display:block;
+    text-align:left;
+    margin-top:2rem;
+  }
+
+  .navPage.responsive .navButton {
+    position:relative;
+    margin-top:1rem;
+    right:0;
+    top:0;
+  }
+  .navPage.responsive .closeNavButton{
+      margin:1rem 1.5rem;
+  }
+
+  .navPage.responsive #logo{
+    margin:1rem 1.5rem;
+}
+  }
+
 
 
 

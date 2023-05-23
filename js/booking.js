@@ -25,20 +25,22 @@ function validateForm(n) {
   }
 
   // In step 3, check the payment method chosen and proceed to payment page accordingly
-  if (n === 3 && selectedPaymentOption === "") {
-    fillAllErrorMessage[n-1].style.display = "block"; // display the error message for not selecting a payment option
-    return false;
-  } else {
-    fillAllErrorMessage[n-1].style.display = "none"; // hide the error message if payment option is selected
-  }
+    if (n === 3 && selectedPaymentOption === "") {
+      fillAllErrorMessage[n-1].style.display = "block"; // display the error message for not selecting a payment option
+      return false;
+    } else {
+      fillAllErrorMessage[n-1].style.display = "none"; // hide the error message if payment option is selected
+    }
 
-  if (n === 3 && selectedPaymentOption === "paypal") {
-    nextBookStep(5); // Payment done through Paypal - Direct to confirmation page
-  } else if (selectedPaymentOption === "creditCard") {
-    nextBookStep(3); // Direct to credit card detail page
-  }
+    if (n === 3 && selectedPaymentOption === "paypal") {
+      updateConfirmPage(); //Update entered detail
+      document.getElementById("step3").style.display = "none"; //hide current form
+      document.getElementById("step6").style.display = "block"; // Proceed to next step
+    } else if (selectedPaymentOption === "creditCard") {
+      nextBookStep(3); // Proceed to enter credit card details
+    }
 
-  //Ensure check box is ticked before payment
+  //Ensure check box is ticked before payment at step 6
   if (n === 6) {
     let selectedCheckBox = document.getElementById("check-id");
     if (!selectedCheckBox.checked) {
@@ -50,12 +52,12 @@ function validateForm(n) {
       selectedCheckBox.setCustomValidity(""); // reset custom validity message
     }
   }
-
   return true;
 }
 
 
-//Form processing - Show and hide form display
+//Form processing
+//Show & hide form display
   function nextBookStep(n) { 
       let currentFormId = "step" + n;
       let nextFormId = "step" + (n + 1); //Get the next form id
@@ -77,6 +79,21 @@ function validateForm(n) {
       document.getElementById(prevFormId).style.display = "block"; //go back to previous form
     }
 
+  //Run the payment loading animation before success page
+  function processPayment() {
+      // Display the loading spinner
+      document.getElementById("loading-spinner").style.display = "block";
+    
+      // Simulate a delay of 3 seconds for processing payment
+      setTimeout(function () {
+        // Proceed to the booking successful page
+        document.getElementById("step7").style.display = "none";
+        document.getElementById("step8").style.display = "block";
+      }, 3000);
+  }
+
+
+//Calculation & Selection
 //Calculate book fee after user selects guest number
   function calBookFee(n){
       let fee = parseInt(n) * 1.10;
@@ -115,10 +132,53 @@ function validateForm(n) {
     }
   }
 
+
+//Validate user input according to input format & display inline error message
+  //Validate any input field to follow the pattern set
+  //including: Full Name/Phone number/Card holder Name/Card number/CVV/City/State/Postcode
+  function validatePattern(inputId, errorMessageId) {
+    let field = document.getElementById(inputId);
+    let errorMessage = document.getElementById(errorMessageId);
+
+    if (field.validity.patternMismatch) { 
+      //set to invalid display and return error
+      field.setCustomValidity("Invalid input format");
+      errorMessage.style.display = "block";
+      return false;
+      } 
+      //set to normal display and enable user to proceed
+      field.setCustomValidity("");
+      errorMessage.style.display = "none";
+      return true;
+  }
+  
+  //Validate user input for email address
+  function checkEmail() {
+      let email = document.getElementById("email-id");
+      let emailValue = email.value;
+      let emailErrorMessage = document.getElementById("emailErrorMessage");
+      if (
+        emailValue.indexOf(" ") !== -1 ||  //check no blank input
+        emailValue.indexOf("@") < 1 || //checking if the @ sign at least 1 character from the beginning and 5 characters from the end of the string
+        emailValue.indexOf("@") > emailValue.length - 5 || 
+        emailValue.indexOf(".") - emailValue.indexOf("@") < 2 || 
+        emailValue.indexOf(".") > emailValue.length - 3 //2-4 characters following the @ to have valid domain name
+      ) { //Set to invalid display and return error
+          email.setCustomValidity("Invalid email address"); 
+          emailErrorMessage.style.display = "block";
+          return false;
+        } 
+      //Set to normal display and enable user to proceed
+      email.setCustomValidity("");
+      emailErrorMessage.style.display = "none";
+      return true;
+    }
+
+
+//Update user input for Confirm Details & Booking Success page
 // Collect all the entered information and display in confirmation page
 function updateConfirmPage() {
-  // Get all user input
-  // Get all user input
+  // Get all user input in previous steps
   let fullName = document.getElementById("name-id").value;
   let phoneNumber = document.getElementById("phone-id").value;
   let emailAddress = document.getElementById("email-id").value;
@@ -144,7 +204,6 @@ function updateConfirmPage() {
     filledBookDate[i].innerHTML = bookDate;
   }
 
-
   let filledBookTime = document.getElementsByClassName("filledBookTime");
   for (let i = 0; i < filledBookTime.length; i++) {
     filledBookTime[i].innerHTML = bookTime;
@@ -155,7 +214,7 @@ function updateConfirmPage() {
   filledBookGuests[i].innerHTML = guests + " Guests";
   }
 
-// Update the guest details section
+// Update the guest contact details section
   let filledGuestDetails = document.getElementsByClassName("filledGuestDetails");
   for (let i = 0; i < filledGuestDetails.length; i++) {
   filledGuestDetails[i].innerHTML =
@@ -165,7 +224,7 @@ function updateConfirmPage() {
     "Special Request: " + specialRequest + "<br><br>";
   }
   
-// Update payment method display
+// Update payment method section
   let paymentMethod = document.getElementsByClassName("paymentMethod");
   for (let i = 0; i < paymentMethod.length; i++) {  
   if (paymentChosen === "creditCard") {
@@ -182,66 +241,7 @@ function updateConfirmPage() {
     address + " ," + city + "<br>" +
     state + postalCode + "<br>" +
     country;
-  } else {
-    filledAddressDetails[i].innerHTML = "Billing Address:<br> 100 White Road, Black St <br> Box Hill VIC 3128\nAustralia";
+  } else { //Default address to represent PayPal option
+    filledAddressDetails[i].innerHTML = "100 Paypal Rd, <br> Box Hill VIC 3128 <br> Australia";
   }}
 }
-
-//Validate user input according to input format & display inline error message
-  //Validate any input field to follow the pattern set
-  //including: Full Name/Phone number/Card holder Name/Card number/CVV/City/State/Postcode
-  function validatePattern(inputId, errorMessageId) {
-    let field = document.getElementById(inputId);
-    let errorMessage = document.getElementById(errorMessageId);
-
-    if (field.validity.patternMismatch) { 
-      //set to invalid display and return error
-      field.setCustomValidity("Invalid input format");
-      errorMessage.style.display = "block";
-      return false;
-      } 
-      //set to normal display and enable user to proceed
-      field.setCustomValidity("");
-      errorMessage.style.display = "none";
-      return true;
-  }
-  
-
-  //Validate user input for email address
-  function checkEmail() {
-      let email = document.getElementById("email-id");
-      let emailValue = email.value;
-      let emailErrorMessage = document.getElementById("emailErrorMessage");
-      if (
-        emailValue.indexOf(" ") !== -1 ||  //check no blank input
-        emailValue.indexOf("@") < 1 || //checking if the @ sign at least 1 character from the beginning and 5 characters from the end of the string
-        emailValue.indexOf("@") > emailValue.length - 5 || 
-        emailValue.indexOf(".") - emailValue.indexOf("@") < 2 || 
-        emailValue.indexOf(".") > emailValue.length - 3 //2-4 characters following the @ to have valid domain name
-      ) { //Set to invalid display and return error
-          email.setCustomValidity("Invalid email address"); 
-          emailErrorMessage.style.display = "block";
-          return false;
-        } 
-      //Set to normal display and enable user to proceed
-      email.setCustomValidity("");
-      emailErrorMessage.style.display = "none";
-      return true;
-    }
-
-    function processPayment() {
-      document.getElementById("step6").style.display = "none";
-      document.getElementById("step7").style.display = "block";
-      // Display the loading spinner
-      document.getElementById("loading-spinner").style.display = "block";
-    
-      // Simulate a delay of 3 seconds for processing payment
-      setTimeout(function () {
-        // Hide the loading spinner
-        document.getElementById("loading-spinner").style.display = "none";
-      
-        // Proceed to the booking successful page
-        document.getElementById("step7").style.display = "none";
-        document.getElementById("step8").style.display = "block";;
-      }, 3000);
-    }
