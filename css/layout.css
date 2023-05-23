@@ -151,6 +151,8 @@ body{
   display:inline-flex;
   flex-direction:row;
   margin-right:0.5rem;
+  width:20px;
+  height:20px;
 }
 
 .icon--large {
@@ -159,6 +161,31 @@ body{
 
 .icon--rt{
   justify-content: flex-end;
+}
+
+.svgbox {
+  display:block;
+}
+
+.svginput {
+  position: relative;
+  display: inline-block;
+}
+
+.svgbox svg{
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-left:0.5rem;
+  margin: auto;
+}
+
+.svgtext {
+  display: block;
+  padding: 0.5rem 2rem;       
+  border-radius: 0.5rem;      
 }
 
 .line-container {
@@ -172,6 +199,8 @@ body{
 }
 
 .info-container {
+  display:flex;
+  flex-direction:column;
   max-width: 60vh;
 	padding: 1rem;
   margin-bottom:1rem;
@@ -184,7 +213,6 @@ form{
 #step1 {
   display:block;
 }
-
 
 #step2 {
   display:block;
@@ -199,6 +227,10 @@ form{
 }
 
 #step5{
+  display:block;
+}
+
+#step6{
   display:block;
 }
 
