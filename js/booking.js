@@ -1,60 +1,60 @@
 
 
 //Check if user entered all required field before proceed to next form step
-function validateForm(n) { 
+function validateForm(n) {
   let currentFormId = "step" + n;
   let f = document.getElementById(currentFormId); // get form content
-  let formInputs = f.getElementsByTagName("input");
-  let formTextarea = f.getElementsByTagName("textarea");
-  let fillAllErrorMessage = Array.from(document.getElementsByClassName("fillAllErrorMessage"));
+  let formInputs = f.getElementsByClassName("formInputs");
+  let fillAllErrorMessage = document.getElementsByClassName("fillAllErrorMessage");
   let selectedPaymentOption = "";
 
-    for (let i = 0; i < formInputs.length; i++) {
-      if (formInputs[i].value.trim() === "" && !formInputs[i].id.includes("optional")) { // users did not enter all information in required filled (ignore optional field)
-        fillAllErrorMessage[i].style.display = "block"; // display the error message for the corresponding input field
-        formInputs[i].setCustomValidity("Please fill in all fields."); // set custom validity message
-        alert("Please fill in all fields.");
-        return false;
-      } else {
-        fillAllErrorMessage[i].style.display = "none"; // hide the error message if the input is filled
-        formInputs[i].setCustomValidity(""); // reset custom validity message
-      }
-
-      if (formInputs[i].type === "radio" && formInputs[i].checked) {
-        selectedPaymentOption = formInputs[i].value;
-      }
+  // Check input fields
+  for (let i = 0; i < formInputs.length; i++) {
+    if (formInputs[i].value.trim() === "" && !formInputs[i].id.includes("optional")) {
+      fillAllErrorMessage[n-1].style.display = "block"; // display the error message for the corresponding input field
+      formInputs[i].setCustomValidity("Please fill in all fields."); // set custom validity message
+      return false;
+    } else {
+      fillAllErrorMessage[n-1].style.display = "none"; // hide the error message if the input is filled
+      formInputs[i].setCustomValidity(""); // reset custom validity message
     }
 
-    //check text area input
-    for (let i = 0; i < formTextarea.length; i++) {
-      if (formTextarea[i].value.trim() === "" && !formTextarea[i].id.includes("optional")) {
-        fillAllErrorMessage[formInputs.length + i].style.display = "block";
-        formTextarea[i].setCustomValidity("Please fill in all fields.");
-        alert("Please fill in all fields.");
-        return false;
-      } else {
-        fillAllErrorMessage[formInputs.length + i].style.display = "none";
-        formTextarea[i].setCustomValidity("");
-      }
+    if (n === 3 && formInputs[i].type === "radio" && formInputs[i].checked) {
+      selectedPaymentOption = formInputs[i].value;
     }
-
-    //In step 3, check the payment method chosen and proceed to payment page accordingly
-      if ( n ==3 && selectedPaymentOption === "") {
-        fillAllErrorMessage[2].style.display = "block"; // display the error message for none selecting payment option
-        alert("Please select a payment option.");
-        return false;
-      } else {
-        fillAllErrorMessage[2].style.display = "none"; // hide the error message if payment option is selected
-      }
-
-      if (selectedPaymentOption === "paypal") {
-        nextBookStep(5); // Payment done through Paypal - Direct to confirmation page
-      } else if (selectedPaymentOption === "creditCard") {
-        nextBookStep(3); // Direct to credit card detail page
-      }
-
-      return true;
   }
+
+  // In step 3, check the payment method chosen and proceed to payment page accordingly
+  if (n === 3 && selectedPaymentOption === "") {
+    fillAllErrorMessage[n-1].style.display = "block"; // display the error message for not selecting a payment option
+    return false;
+  } else {
+    fillAllErrorMessage[n-1].style.display = "none"; // hide the error message if payment option is selected
+  }
+
+  if (n === 3 && selectedPaymentOption === "paypal") {
+    nextBookStep(5); // Payment done through Paypal - Direct to confirmation page
+  } else if (selectedPaymentOption === "creditCard") {
+    nextBookStep(3); // Direct to credit card detail page
+  }
+
+  //Ensure check box is ticked before payment
+  if (n === 6) {
+    let selectedCheckBox = document.getElementById("check-id");
+    if (!selectedCheckBox.checked) {
+      fillAllErrorMessage[n - 1].style.display = "block"; // display the error message for not checking the checkbox
+      selectedCheckBox.setCustomValidity("Please tick the check box."); // set custom validity message
+      return false;
+    } else {
+      fillAllErrorMessage[n - 1].style.display = "none"; // hide the error message if the checkbox is checked
+      selectedCheckBox.setCustomValidity(""); // reset custom validity message
+    }
+  }
+
+  return true;
+}
+
+
 //Form processing - Show and hide form display
   function nextBookStep(n) { 
       let currentFormId = "step" + n;
@@ -138,42 +138,54 @@ function updateConfirmPage() {
   let postalCode = document.getElementById("post-id").value;
   let country = document.getElementById("country-id").value;
 
-// Update the reservation details section
-let filledBookDetails = document.getElementById("filledBookDetails");
-filledBookDetails.innerHTML =
-  "Date: " + bookDate + "<br>" +
-  "Time: " + bookTime + "<br>" +
-  "Guests: " + guests + "<br>";
+// Update the reservation details section (seperately to align with icons)
+  let filledBookDate = document.getElementsByClassName("filledBookDate");
+  for (let i = 0; i < filledBookDate.length; i++) {
+    filledBookDate[i].innerHTML = bookDate;
+  }
+
+
+  let filledBookTime = document.getElementsByClassName("filledBookTime");
+  for (let i = 0; i < filledBookTime.length; i++) {
+    filledBookTime[i].innerHTML = bookTime;
+  }
+
+  let filledBookGuests = document.getElementsByClassName("filledBookGuests");
+  for (let i = 0; i < filledBookGuests.length; i++) {  
+  filledBookGuests[i].innerHTML = guests + " Guests";
+  }
 
 // Update the guest details section
-let filledGuestDetails = document.getElementById("filledGuestDetails");
-filledGuestDetails.innerHTML =
-  "Name: " + fullName + "<br>" +
-  "Phone: " + phoneNumber + "<br>" +
-  "Email: " + emailAddress + "<br>" +
-  "Special Request: " + specialRequest + "<br><br>";
-  
-// Update payment method display
-  let paymentMethod = document.getElementById("paymentMethod");
-  if (paymentChosen === "creditCard") {
-    paymentMethod.innerHTML = "Credit Card ending with *" + cardEndNumber;
-  } else if (paymentChosen === "paypal") {
-    paymentMethod.innerHTML = "Pay with PayPal";
+  let filledGuestDetails = document.getElementsByClassName("filledGuestDetails");
+  for (let i = 0; i < filledGuestDetails.length; i++) {
+  filledGuestDetails[i].innerHTML =
+    "Name: " + fullName + "<br>" +
+    "Phone: " + phoneNumber + "<br>" +
+    "Email: " + emailAddress + "<br>" +
+    "Special Request: " + specialRequest + "<br><br>";
   }
   
-// Update the billing address section
-  let filledAddressDetails = document.getElementById("filledAddressDetails");
+// Update payment method display
+  let paymentMethod = document.getElementsByClassName("paymentMethod");
+  for (let i = 0; i < paymentMethod.length; i++) {  
   if (paymentChosen === "creditCard") {
-  filledAddressDetails.innerHTML =
-    "Billing Address: <br>" +
+    paymentMethod[i].innerHTML = "Credit Card ending with *" + cardEndNumber;
+  } else if (paymentChosen === "paypal") {
+    paymentMethod[i].innerHTML = "Pay with PayPal";
+  }}
+  
+// Update the billing address section
+  let filledAddressDetails = document.getElementsByClassName("filledAddressDetails");
+  for (let i = 0; i < filledAddressDetails.length; i++) {  
+  if (paymentChosen === "creditCard") {
+  filledAddressDetails[i].innerHTML =
     address + " ," + city + "<br>" +
     state + postalCode + "<br>" +
     country;
-} else {
-  filledAddressDetails.innerHTML = "Billing Address:<br> 100 White Road, Black St <br> Box Hill VIC 3128\nAustralia";
+  } else {
+    filledAddressDetails[i].innerHTML = "Billing Address:<br> 100 White Road, Black St <br> Box Hill VIC 3128\nAustralia";
+  }}
 }
-}
-
 
 //Validate user input according to input format & display inline error message
   //Validate any input field to follow the pattern set
@@ -215,4 +227,21 @@ filledGuestDetails.innerHTML =
       email.setCustomValidity("");
       emailErrorMessage.style.display = "none";
       return true;
+    }
+
+    function processPayment() {
+      document.getElementById("step6").style.display = "none";
+      document.getElementById("step7").style.display = "block";
+      // Display the loading spinner
+      document.getElementById("loading-spinner").style.display = "block";
+    
+      // Simulate a delay of 3 seconds for processing payment
+      setTimeout(function () {
+        // Hide the loading spinner
+        document.getElementById("loading-spinner").style.display = "none";
+      
+        // Proceed to the booking successful page
+        document.getElementById("step7").style.display = "none";
+        document.getElementById("step8").style.display = "block";;
+      }, 3000);
     }

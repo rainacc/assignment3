@@ -117,6 +117,23 @@ body{
     }
   }
 
+.spinner {
+    border-radius: 60%;
+    width: 3rem;
+    height: 3rem;
+    animation: spin 1.5s linear infinite; /* Apply rotation animation */
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg); /* Starting position */
+    }
+    100% {
+      transform: rotate(360deg); /* Ending position */
+    }
+  }
+
 /*Image style*/
 .img--full {
   position:relative;
@@ -185,7 +202,7 @@ body{
 .svgtext {
   display: block;
   padding: 0.5rem 2rem;       
-  border-radius: 0.5rem;      
+  border-radius: 0.5rem;     
 }
 
 .line-container {
@@ -202,8 +219,10 @@ body{
   display:flex;
   flex-direction:column;
   max-width: 60vh;
-	padding: 1rem;
-  margin-bottom:1rem;
+  max-height:50vh;
+  overflow:scroll;
+	padding: 0.5rem 1rem;
+  margin-bottom:0.5rem;
 }
 
 form{
@@ -243,10 +262,9 @@ label {
 
 .errorMessage {
   display:none;
-  margin-bottom:0.5rem;
-  margin-top:-0.5rem;
   text-align:left;
   position:relative;
+  margin-top:0.2rem;
 }
 
 textarea {

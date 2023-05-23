@@ -13,14 +13,13 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="../js/booking.js"></script>
     <h1>BOOK A TABLE</h1>
     <form id="step1" class="bookForm-container stack">
         <h2 class="h2--black">Reservation Details</h2>
         <br><p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
         <ul>
             <li><label for="guests-id">Guest Number</label>
-                <select id="guests-id" onchange="calBookFee(this.value)">
+                <select id="guests-id" class="formInputs" onchange="calBookFee(this.value)">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -30,10 +29,10 @@
                 </select></li>
 
             <li><label for="date-id">Reservation Date</label>
-            <input id="date-id" type="date" name="date" onchange="checkDateTime()"></li>
+            <input id="date-id" type="date" name="date" class="formInputs" onchange="checkDateTime()"></li>
 
 		    <li><label for = "time-id">Reservation Time</label>
-            <select id="time-id" disabled>
+            <select id="time-id" class="formInputs" disabled>
                 <option>12:00 pm</option>
                 <option>12:30 pm</option>
                 <option>1:00 pm</option>
@@ -62,19 +61,19 @@
     <br><p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
     <ul>
         <li><label for="name-id">Full Name</label>
-            <input id="name-id" type="text" placeholder="John Smith" autocomplete="name" pattern="^(?=.*[a-zA-Z])(?=.*\s)[a-zA-Z\s]+$" onchange="validatePattern('name-id','nameErrorMessage')">
+            <input id="name-id" type="text" class="formInputs" placeholder="John Smith" autocomplete="name" pattern="^(?=.*[a-zA-Z])(?=.*\s)[a-zA-Z\s]+$" onchange="validatePattern('name-id','nameErrorMessage')">
             <p id="nameErrorMessage" class="errorMessage">Please enter your full name containing letters and space only. e.g. John Smith</p></li>
 
         <li><label for="phone-id">Phone Number</label>
-                <input id="phone-id" type="tel" placeholder="0400000000" pattern="[0-9]{10}" autocomplete="mobile" onchange="validatePattern('phone-id', 'phoneErrorMessage')">
+                <input id="phone-id" type="tel" class="formInputs" placeholder="0400000000" pattern="[0-9]{10}" autocomplete="mobile" onchange="validatePattern('phone-id', 'phoneErrorMessage')">
                 <p id="phoneErrorMessage" class="errorMessage">Please input a valid phone number containing 10 numbers e.g.0412345678.</p></li>
 
         <li><label for="email-id">Email Address</label>
-        <input id="email-id" type="email" placeholder="example@mail.com" autocomplete="email" onchange="checkEmail()">
+        <input id="email-id" type="email" class="formInputs" placeholder="example@mail.com" autocomplete="email" onchange="checkEmail()">
         <p id="emailErrorMessage" class="errorMessage">Please input a valid email address. e.g. example@mail.com</p></li>
 
         <li><label for="special-id-optional">Special Request (Optional)</label>
-            <textarea id="special-id-optional" type="text" placeholder="Enter any special requests or dietary restrictions"></textarea></li>
+            <textarea id="special-id-optional" class="formInputs" type="text" placeholder="Enter any special requests or dietary restrictions"></textarea></li>
     </ul>
     <br>
     <p class="p--black">*Booking deposit is $1 per person.</p>
@@ -97,10 +96,10 @@
     <h2 class="h2--black">Choose Your Payment Method</h2>
      <br><p class="fillAllErrorMessage errorMessage">*Please select a payment option.</p>
    <ul>
-        <li><input type="radio" name="payment-option" value="paypal">
+        <li><input type="radio" class="formInputs" name="payment-option" value="paypal">
             <img src="../images/icons/paypal.png" class="icon icon--large" alt="paypal icon"></input>
         </li>
-        <li><input type="radio" name="payment-option" value="creditCard">
+        <li><input type="radio" class="formInputs" name="payment-option" value="creditCard">
             <svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 25 19"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g class="a"><rect class="b" width="25" height="19" rx="5"/><rect class="c" x="1.5" y="1.5" width="22" height="16" rx="3.5"/></g><path class="a" d="M0,0H22.451" transform="translate(1.339 6.7)"/></svg>
             Credit Card</input></li>
     </ul>
@@ -127,23 +126,23 @@
     <div class="horizontal">
         <svg class="icon icon--small" xmlns="http://www.w3.org/2000/svg" width="25" height="19" viewBox="0 0 25 19"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g class="a"><rect class="b" width="25" height="19" rx="5"/><rect class="c" x="1.5" y="1.5" width="22" height="16" rx="3.5"/></g><path class="a" d="M0,0H22.451" transform="translate(1.339 6.7)"/></svg>
         <p class="p--black">Credit Card</p></div>
-
     <br><p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
     <ul>
         <li><label for="cardName-id">Cardholder Name</label>
-        <input id="cardName-id" type="text" placeholder="John Smith" pattern="^(?=.*[a-zA-Z])(?=.*\s)[a-zA-Z\s]+$" onchange="validatePattern('cardName-id','cardNameErrorMessage')">
+        <input id="cardName-id" class="formInputs" type="text" placeholder="John Smith" pattern="^(?=.*[a-zA-Z])(?=.*\s)[a-zA-Z\s]+$" onchange="validatePattern('cardName-id','cardNameErrorMessage')">
         <p id="cardNameErrorMessage" class="errorMessage">Please enter your full name containing letters and space only. e.g. John Smith</p></li>
 
         <li><label for="cardNumber-id">Credit Card Number</label>
-        <input id="card-id" type="tel" pattern="[0-9\s]{14,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" onchange="validatePattern('card-id', 'cardErrorMessage')">
+        <input id="card-id" type="tel" class="formInputs" pattern="[0-9\s]{14,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" onchange="validatePattern('card-id', 'cardErrorMessage')">
         <p id="cardErrorMessage" class="errorMessage">Please input a valid card number. e.g. 0000 0000 0000 0000</p></li>
 
         <div class="cluster">
         <li><label for="expireDate-id">Expiration Date (YY/MM)</label>
-            <input id="expireDate-id" type="month" placeholder="e.g. 24/12" autocomplete="cc-exp">
+            <input id="expireDate-id" class="formInputs" type="month" placeholder="e.g. 24/12" autocomplete="cc-exp">
             <p id="expireDateErrorMessage" class="errorMessage">Please input a valid expire date. e.g. 24/12 for December 2024.</p></li>
-        <li><label for="cvv-id">CVV/CVC</label>
-            <input id="cvv-id" type="tel" placeholder="000" pattern="[0-9]{3,4}" maxlength="4" onchange="validatePattern('cvv-id', 'cvvErrorMessage') ">
+        
+            <li><label for="cvv-id">CVV/CVC</label>
+            <input id="cvv-id" type="tel" class="formInputs" placeholder="000" pattern="[0-9]{3,4}" maxlength="4" onchange="validatePattern('cvv-id', 'cvvErrorMessage') ">
             <p id="cvvErrorMessage" class="errorMessage">Please input a 3~4 digit Card Verification Value (CVV) or Card Verification Code (CVC). e.g. 000</p></li>
         </div>
     </ul>
@@ -170,29 +169,25 @@
     <ul>
         <li>
             <label for="address-id">Street Address</label>
-            <textarea id="address-id" placeholder="e.g. 10 White St" autocomplete="street-address" pattern="(?=\S*\s)(?=[^a-zA-Z]*[a-zA-Z])(?=\D*\d)[a-zA-Z\d\s',.#/-]*" onchange="validatePattern('address-id', 'addressErrorMessage')"></textarea>
+            <textarea id="address-id" class="formInputs" placeholder="e.g. 10 White St" autocomplete="street-address" pattern="(?=\S*\s)(?=[^a-zA-Z]*[a-zA-Z])(?=\D*\d)[a-zA-Z\d\s',.#/-]*" onchange="validatePattern('address-id', 'addressErrorMessage')"></textarea>
             <p id="addressErrorMessage" class="errorMessage">Please enter a valid address.</p>
           </li>
 
         <li><label for="city-id">City</label>
-        <input id="city-id" type="text"  autocomplete="address-level2"  placeholder="Melbourne" pattern="[a-zA-Z\s]+" onchange="validatePattern('city-id', 'cityErrorMessage')">
+        <input id="city-id" type="text" class="formInputs" autocomplete="address-level2"  placeholder="Melbourne" pattern="[a-zA-Z\s]+" onchange="validatePattern('city-id', 'cityErrorMessage')">
         <p id="cityErrorMessage" class="errorMessage">Please input a valid city name containing only letters and space. e.g. Melbourne</p></li>
 
         <li><label for="state-id">State/Province</label>
-        <input id="state-id" type="text" placeholder="Victoria" autocomplete="state" pattern="[a-zA-Z\s]+" onchange="validatePattern('state-id', 'stateErrorMessage')">
+        <input id="state-id" type="text" class="formInputs" placeholder="Victoria" autocomplete="state" pattern="[a-zA-Z\s]+" onchange="validatePattern('state-id', 'stateErrorMessage')">
         <p id="stateErrorMessage" class="errorMessage">Please input a valid state containing only letters and space. e.g. Victoria</p></li>
 
         <li><label for="post-id">Postal/ZIP Code</label>
-            <input id="post-id" type="tel" placeholder="0000" pattern="[0-9]{4,6}" maxlength="6" autocomplete="postal-code">
+            <input id="post-id" type="tel" class="formInputs" placeholder="0000" pattern="[0-9]{4,6}" maxlength="6" autocomplete="postal-code">
             <p id="postErrorMessage" class="errorMessage">Please input valid postcode. e.g. 3000</p></li>
 
 		<li><label for = "country-id">Country</label>
-            <select id="country-id">
+            <select id="country-id" class="formInputs">
                 <option value="Australia">Australia</option>
-                <option value="Brazil">Brazil</option>
-                <option value="China">China</option>
-                <option value="France">France</option>
-                <option value="United States">United States</option>
             </select>
         </li>
     </ul>
@@ -224,13 +219,13 @@
             <li class="svgbox">
                 <div class="svginput ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23.386" height="19.039" viewBox="0 0 23.386 19.039"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><path class="a" d="M0,0H21" transform="translate(1.193 7.533)"/><g class="a" transform="translate(0 1.266)"><rect class="b" width="23.386" height="17.773" rx="5"/><rect class="c" x="1.5" y="1.5" width="20.386" height="14.773" rx="3.5"/></g><path class="a" d="M0,0H5.228" transform="translate(7.076) rotate(90)"/><path class="a" d="M0,0H5.228" transform="translate(16.43) rotate(90)"/></svg>
-                <p id="filledBookDetails" class="p--black svgtext">Reservation Date:</p> 
+                <p class="p--black svgtext filledBookDate">Reservation Date:</p> 
                 </div></li>
 
             <li class="svgbox">
                 <div class="svginput">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g class="a"><circle class="b" cx="10.5" cy="10.5" r="10.5"/><circle class="c" cx="10.5" cy="10.5" r="9"/></g><path class="a" d="M4.4,0,0,2.92,2.356,9.637" transform="matrix(0.978, -0.208, 0.208, 0.978, 10.5, 7.245)"/></svg>
-                 <p id="filledBookDetails" class="p--black svgtext">Reservation Time:</p> 
+                 <p class="p--black svgtext filledBookTime">Reservation Time:</p> 
                 </div></li>
 
             <li class="svgbox">
@@ -245,24 +240,25 @@
                          </defs>
                              <path class="cls-1" d="M-7638.846-3318l-3.69-8.14,1.608-1.469a3.587,3.587,0,0,0,1.2-2.668,3.855,3.855,0,0,0-3.966-3.722,3.856,3.856,0,0,0-3.968,3.722,3.586,3.586,0,0,0,1.225,2.689l1.642,1.476-3.723,8.112h9.67m4.654,3h-19l4.753-10.357a6.6,6.6,0,0,1-2.22-4.92,6.848,6.848,0,0,1,6.968-6.722,6.848,6.848,0,0,1,6.966,6.722,6.6,6.6,0,0,1-2.179,4.883Z" transform="translate(7653.193 3337)"/>
                  </svg>
-                <p id="filledBookDetails" class="p--black svgtext">Guests:</p> 
+                <p class="p--black svgtext filledBookGuests">Guests:</p> 
                 </div></li>
 
             <li class="svgbox">
                 <div class="svginput ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20.779" height="25.78" viewBox="0 0 20.779 25.78"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g transform="translate(1.507 1.5)"><path class="a" d="M3978.159,3552.276s-9.144-9.7-9.252-11.813.985-10.278,9.252-10.278,8.513,7.529,8.513,10.278S3978.159,3552.276,3978.159,3552.276Z" transform="translate(-3968.9 -3530.185)"/><g class="a" transform="translate(4.295 3.637)"><circle class="b" cx="4.591" cy="4.591" r="4.591"/><circle class="c" cx="4.591" cy="4.591" r="3.091"/></g></g></svg>
-                <p id="filledBookDetails" class="p--black svgtext">970-972 Whitehorse Road, <br> Box Hill VIC 3128</p>     
+                <p class="p--black svgtext">970-972 Whitehorse Road, <br> Box Hill VIC 3128</p>     
                 </div></li>
                     
             </ul>
             <br>
-            <li><p id="filledGuestDetails" class="p--black"></p></li>
-            <li><h3 id="paymentMethod">Payment Method</h3></li>
+            <li><p class="p--black filledGuestDetails"></p></li>
+            <li><h3 class="paymentMethod">Payment Method</h3></li>
             <br>
-            <li><p id="filledAddressDetails" class="p--black">Billing Address:</p></li>
+            <li><h3>Billing Address:</h3></li>
+            <li><p class="p--black filledAddressDetails">Address Input</p></li>
           </div>
         <li>
-            <input type="checkbox" id="check-id">I confirm that the above booking information are correct.</input>
+            <input type="checkbox" id="check-id" class="formInputs"> I confirm that the above booking information are correct.</input>
             <p id="confirmErrorMessage" class="errorMessage">Please check above details are correct and tick the check box.</p>
         </li>
     </ul>
@@ -278,10 +274,70 @@
     <p class="p--secondary rt"> (GST Included)</p>
      <div class="centre">
         <button type="button" class="button button--white" onclick="prevBookStep(6)">BACK</button>
-        <button type="button" class="button button--secondary" onclick="if (validateForm(6)) nextBookStep(6)">NEXT</button>
+        <button type="button" class="button button--secondary" onclick="if (validateForm(6)) nextBookStep(6)">PAY NOW</button>
     </div>
 </div>
 </form>
 
+<form id="step7" class="bookForm-container stack">
+    <h2 class="h2--black">Processing Payment...</h2>
+    <br>
+    <div class="stack">
+    <div id="loading-spinner centre" class="spinner"></div><br>
+    <p class="p--black centre">Please wait patiently while we process your payment...<br>Do not quit the page during the process.</p>
+    </div>
+    <br>
+</form>
+
+<form id="step8" class="bookForm-container stack">
+    <h2 class="h2--black">Booking Successful</h2>
+    <ul>
+        <div class="info-container">
+            <ul class="cluster">
+            <li class="svgbox">
+                <div class="svginput ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23.386" height="19.039" viewBox="0 0 23.386 19.039"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><path class="a" d="M0,0H21" transform="translate(1.193 7.533)"/><g class="a" transform="translate(0 1.266)"><rect class="b" width="23.386" height="17.773" rx="5"/><rect class="c" x="1.5" y="1.5" width="20.386" height="14.773" rx="3.5"/></g><path class="a" d="M0,0H5.228" transform="translate(7.076) rotate(90)"/><path class="a" d="M0,0H5.228" transform="translate(16.43) rotate(90)"/></svg>
+                <p class="p--black svgtext filledBookDate">Reservation Date:</p> 
+                </div></li>
+
+            <li class="svgbox">
+                <div class="svginput">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g class="a"><circle class="b" cx="10.5" cy="10.5" r="10.5"/><circle class="c" cx="10.5" cy="10.5" r="9"/></g><path class="a" d="M4.4,0,0,2.92,2.356,9.637" transform="matrix(0.978, -0.208, 0.208, 0.978, 10.5, 7.245)"/></svg>
+                 <p class="p--black svgtext filledBookTime">Reservation Time:</p> 
+                </div></li>
+
+            <li class="svgbox">
+             <div class="svginput">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="19.001" height="22" viewBox="0 0 19.001 22">
+                         <defs>
+                                  <style>
+                                    .cls-1 {
+                                      fill: #f29d35;
+                                    }
+                                 </style>
+                         </defs>
+                             <path class="cls-1" d="M-7638.846-3318l-3.69-8.14,1.608-1.469a3.587,3.587,0,0,0,1.2-2.668,3.855,3.855,0,0,0-3.966-3.722,3.856,3.856,0,0,0-3.968,3.722,3.586,3.586,0,0,0,1.225,2.689l1.642,1.476-3.723,8.112h9.67m4.654,3h-19l4.753-10.357a6.6,6.6,0,0,1-2.22-4.92,6.848,6.848,0,0,1,6.968-6.722,6.848,6.848,0,0,1,6.966,6.722,6.6,6.6,0,0,1-2.179,4.883Z" transform="translate(7653.193 3337)"/>
+                 </svg>
+                <p class="p--black svgtext filledBookGuests">Guests:</p> 
+                </div></li>
+
+            <li class="svgbox">
+                <div class="svginput ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20.779" height="25.78" viewBox="0 0 20.779 25.78"><defs><style>.a,.c{fill:none;}.a{stroke:#f29d35;stroke-width:3px;}.b{stroke:none;}</style></defs><g transform="translate(1.507 1.5)"><path class="a" d="M3978.159,3552.276s-9.144-9.7-9.252-11.813.985-10.278,9.252-10.278,8.513,7.529,8.513,10.278S3978.159,3552.276,3978.159,3552.276Z" transform="translate(-3968.9 -3530.185)"/><g class="a" transform="translate(4.295 3.637)"><circle class="b" cx="4.591" cy="4.591" r="4.591"/><circle class="c" cx="4.591" cy="4.591" r="3.091"/></g></g></svg>
+                <p class="p--black svgtext">970-972 Whitehorse Road, <br> Box Hill VIC 3128</p>     
+                </div></li>
+                    
+            </ul>
+            <br>
+            <li><p class="p--black filledGuestDetails"></p></li>
+            <li><h3 class="paymentMethod">Payment Method</h3></li>
+            <br>
+            <li><h3>Billing Address:</h3></li>
+            <li><p class="p--black filledAddressDetails">Address Input</p></li>
+          </div>
+    </ul>
+</form>
+
+<script src="../js/booking.js"></script>
 </body>
 </html>

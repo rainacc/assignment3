@@ -104,15 +104,20 @@ li:has(input[type="radio"]) {
     border-radius: 0.5rem;
 }
 
-input:invalid, select:invalid, textarea:invalid {
+.formInputs:invalid {
     border: 2px solid;
     border-color: var(--color-error);
 }
 
-input:focus, select:focus, textarea:focus {
+.formInputs:focus {
     box-shadow: 0px 0px 5px var(--color-secondary);
 }
 
 .errorMessage {
     color: var(--color-error);
+}
+
+.spinner {
+    border: 6px solid var(--color-secondary);
+    border-top: 6px solid var(--color-primary);
 }

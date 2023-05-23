@@ -31,7 +31,7 @@ h1 {
     text-transform: uppercase;
     text-underline-offset: 10px;
     margin-top:1rem;
-    margin-bottom:2rem;
+    margin-bottom:1.5rem;
     font-stretch: condensed;
 }
 
@@ -53,31 +53,36 @@ p {
     margin-left:1rem;
 }
 
-input {
+input, select, textarea {
     font-family: "Bahnschrift";
     font-stretch: condensed;
+    font-size: var(--text-size);
+    font-weight: var(--font-weight-reg);
 }
 
 select, textarea, input[type="text"], [type="tel"], [type="email"], [type="date"], [type="number"],[type="month"] {
-    font-size: var(--text-size);
-    font-weight: var(--font-weight-reg);
-    font-family: "Bahnschrift";
     text-align: left;
     border: 2px solid;
     border-radius:0.5rem;
     display:flex;
     padding:0.5rem 1rem;
+}
+
+li {
     margin-bottom:1rem;
 }
 
-[type="radio"] {
-    font-size: var(--text-size);
-    font-weight: var(--font-weight-reg);
+input[type="radio"] {
     transform: scale(1.5);
     border: 2px solid;
     border-radius:0.5rem;
+    padding:1rem 2rem;
+    margin:1.5rem 1rem;
+}
+
+input[type="checkbox"]{
+    transform: scale(1.5);
     padding:0.5rem 1rem;
-    margin:2rem 1rem;
 }
 
 
