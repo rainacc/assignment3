@@ -12,8 +12,8 @@
     /* typography scale */
     font-size: 18px;
     --text-size: 1rem;
-    --text-size-l: 1.4rem;
-    --text-size-xl: 1.7rem;
+    --text-size-l: 1.3rem;
+    --text-size-xl: 1.8rem;
 }
 
 body {
@@ -23,7 +23,6 @@ body {
 #logo {
     font-size: var(--text-size-xl);
     font-weight: var(--font-weight-bold);
-    text-underline-offset: 10px;
 }
 
 h1 {
@@ -44,6 +43,7 @@ p {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
     font-stretch: condensed;
+    line-height: 1.4;
 }
 
 ::placeholder {

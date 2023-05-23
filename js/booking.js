@@ -61,9 +61,14 @@ function validateForm(n) {
   function nextBookStep(n) { 
       let currentFormId = "step" + n;
       let nextFormId = "step" + (n + 1); //Get the next form id
+      
+      //Hide navigation bar to provide space for form content (PC version)
+      if (nextFormId !== 1){
+        document.getElementById("navB").style.display="none";
+      } 
       document.getElementById(currentFormId).style.display = "none"; //hide current form
       document.getElementById(nextFormId).style.display = "block"; // Proceed to next step
-  }
+    }
 
   function prevBookStep(n) {
       let currentFormId = "step" + n;
@@ -73,6 +78,10 @@ function validateForm(n) {
       prevFormId = "step" + (n - 1);
       } else {// If user is in step 6 confirm page, jump back to step 3 to choose payment method again
       prevFormId = "step" + (n - 3); 
+      }
+
+     if (n === 2){ //When back to step 1 shows nav bar again
+        document.getElementById("navB").style.display="flex";
       }
 
       document.getElementById(currentFormId).style.display = "none"; //hide current form

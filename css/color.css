@@ -1,5 +1,5 @@
 :root {
---color-black: #000000;
+--color-black: #1c1a17;
 --color-white: #FFFFFF;
 --color-primary: #F29D35;
 --color-secondary: #7F7F7F;
@@ -16,7 +16,7 @@ body{
 
 #logo {
     color: var(--color-white);
-    text-decoration: underline 3px var(--color-primary);
+    text-decoration: none;
 }
 
 h1 {
@@ -82,6 +82,15 @@ input::placeholder {
     color: var(--color-black);
     background-color: var(--color-white);
     border-color: var(--color-primary);
+}
+
+.foodCard-container img {
+    border: 3px solid var(--color-primary);
+    border-radius: 0.5rem;
+}
+
+.foodDetails {
+    background-color: var(--color-white);
 }
 
 li:has(input[type="radio"]) {
