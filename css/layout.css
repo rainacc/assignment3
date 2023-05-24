@@ -1,6 +1,4 @@
 /* MOBILE LAYOUT */
-
-
 body{
     list-style-type: disc;
     margin-left: 4rem;
@@ -73,6 +71,11 @@ form li {
   padding:0.5rem;
 }
 
+/* Hide scrollbar for grid layout */
+.grid::-webkit-scrollbar{
+  display: none;
+}
+
 .foodCard-container {
   width: 250px; 
   height: 250px; 
@@ -98,10 +101,10 @@ form li {
 .foodDetails-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  overflow: scroll;
+  overflow-x: scroll;
   border-radius:0.5rem;
 }
 
@@ -111,32 +114,11 @@ form li {
   top:50%;
   left:50%;
   transform: translate(-50%, -50%);
-  width:70%;
-  height:60%;
-  padding:3rem;
+  max-width:60%;
+  max-height:80%;
+  padding:1rem 2rem 3rem 2rem;
   align-items: center;
-  border-radius:1rem;
 }
-
-#food1:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #FFF;
-  border-radius:1rem;
-}
-
-#food1:after {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: black;
-}
-
 
 /*navigation layout*/
 .navPage{
@@ -236,8 +218,9 @@ form li {
   bottom: 0;
   left: 0;
   min-width: 100%;
-  height:6vh;
+  height:5vh;
   margin-top:0.5rem;
+  padding:1.5rem;
   text-align: center;
   box-sizing: border-box;
 }

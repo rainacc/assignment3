@@ -14,6 +14,10 @@ body{
     background-color: var(--color-black);
 }
 
+.scrollDownField {
+    background-color: var(--color-black);
+}
+
 #logo {
     color: var(--color-white);
     text-decoration: none;
@@ -91,6 +95,10 @@ input::placeholder {
 
 .foodDetails {
     background-color: var(--color-white);
+    border: 3px solid var(--color-primary);
+    border-radius:1rem;
+    -webkit-box-shadow:  0 0 0 100vh rgba(0, 0, 0, 0.7);
+    box-shadow:  0 0 0 100vh rgba(0, 0, 0, 0.7);
 }
 
 li:has(input[type="radio"]) {
