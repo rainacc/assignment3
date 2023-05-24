@@ -385,13 +385,18 @@ textarea {
   overflow:scroll;
 }
 
-.openingTime {
+.contactInfo {
   padding-left:1rem;
 }
 
-.openingTime p{
+.contactInfo p{
   line-height:1.5rem;
-  margin:1rem;
+  margin:0rem 1rem 1rem 1rem;
+  padding-left:1rem;
+}
+
+.contactInfo ul {
+  max-width:18rem;
 }
 
 
