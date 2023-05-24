@@ -385,6 +385,16 @@ textarea {
   overflow:scroll;
 }
 
+.openingTime {
+  padding-left:1rem;
+}
+
+.openingTime p{
+  line-height:1.5rem;
+  margin:1rem;
+}
+
+
 @media (max-width: 600px){ /* mobile container */
   body{
     list-style-type: disc;
