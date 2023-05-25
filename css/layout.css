@@ -589,6 +589,7 @@ body{
     display:block;
     text-align:center;
     margin:3rem;
+    animation: slideUp 1s;
   }
 
   .navPage.responsive .navBar{
