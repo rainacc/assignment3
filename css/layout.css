@@ -511,6 +511,7 @@ body{
   display:flex;
   flex-direction: row;
   margin-bottom:3.5rem;
+  max-width: 100%;
   animation:slideUp 2s;
   }
 
