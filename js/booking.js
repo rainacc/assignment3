@@ -100,6 +100,10 @@ function validateForm(n) {
         // Proceed to the booking successful page
         document.getElementById("step7").style.display = "none";
         document.getElementById("step8").style.display = "block";
+       
+        //Show next page button and navigation bar again
+        document.getElementById("navB").style.display="flex";
+        document.getElementsByClassName('nextPageField')[0].style.display = "flex";
       }, 3000);
   }
 
