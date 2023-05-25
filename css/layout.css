@@ -386,13 +386,28 @@ body{
   margin:1rem;
   }
 
-  form h2 {
-    animation: slideRight 0.6s;
-  }
+    /* Form Animations */
+    /* step 1 form use slide up animation for consistency */
+    #step1 h2 {
+      animation: slideUp 0.6s;
+    }
 
-  form ul, form p{
-    animation: slideRight 1s;
-  }
+    #step1 ul, #step1 p{
+      animation: fadeIn 1s;
+    }
+
+    /* later forms use slide right animation for fluency */
+    form:not(#step1) ul{ /* slide in input fields */
+      animation: slideRight 0.8s;
+    }
+
+    form:not(#step1) p { /* Error message/ information display */
+      animation:fadeIn 0.6s;
+    }
+
+    form:not(#step1) h2 {
+      animation: slideRight 0.6s;
+    }
 
   .info-container {
   display:flex;
