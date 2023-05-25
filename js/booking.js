@@ -110,8 +110,9 @@ function validateForm(n) {
 
 //Calculation & Selection
 //Calculate book fee after user selects guest number
-  function calBookFee(n){
-      let fee = parseInt(n) * 1.10;
+  function calBookFee(){
+    let guestsToCalc = document.getElementById("guests-id").value;
+      let fee = parseInt(guestsToCalc) * 1.10;
       let feeElements = document.getElementsByClassName("bookFee"); //Find every book fee display elements across forms
       for (let i = 0; i < feeElements.length; i++) {
           feeElements[i].textContent = "$" + fee.toFixed(2);//Change the booking fee display & round to two decimal places
