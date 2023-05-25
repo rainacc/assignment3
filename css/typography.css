@@ -66,3 +66,8 @@ input, select, textarea {
     font-family: "Bahnschrift";
 }
 
+#fullMenu {
+    font-size: var(--text-size-l);
+    font-weight: var(--font-weight-semibold);
+    font-stretch: condensed;
+}

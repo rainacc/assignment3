@@ -32,8 +32,9 @@
                 <li><a class="button button--primary" href="booking.html" >BOOK A TABLE</a></li>
             </ul>
 </nav>
-
     <h1>BOOK A TABLE</h1>
+    <img class="backgroundPhoto" src="../images/photos/BookPage-Background.jpg">
+
     <form id="step1" class="bookForm-container stack">
         <h2 class="h2--black">Reservation Details</h2>
         <p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
@@ -70,7 +71,7 @@
             <h2 id="bookFee" class="h2--black bookFee">$0.00</h2>
             </div>
             <p class="p--secondary rt"> (GST Included)</p>
-         <div class="cluster">
+         <div class="rt">
             <button type="button" class="button button--secondary" onclick="if (validateForm(1)) nextBookStep(1)">NEXT</button>
         </div>
 </form>
@@ -359,7 +360,11 @@
         </div>
     </ul>
 </form>
-
+<div class="cluster">
+    <a class = "nextPageField centre" href="about.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32.121" height="18.182" viewBox="0 0 32.121 18.182"><defs><style>.a{fill:none;stroke:#f29d35;stroke-width:3px;}</style></defs><path class="a" d="M0,0,15,15,0,30" transform="translate(31.061 1.061) rotate(90)"/></svg>
+    </a>
+    </div>
 <script src="../js/booking.js"></script>
 </body>
 </html>

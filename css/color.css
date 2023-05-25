@@ -1,141 +1,159 @@
 :root {
---color-black: #1c1a17;
---color-white: #FFFFFF;
---color-primary: #F29D35;
---color-secondary: #7F7F7F;
---color-error: #F23535;
-}
-
-body{
-    background-color: var(--color-black);
-}
-
-#navPage{
-    background-color: var(--color-black);
-}
-
-.scrollDownField {
-    background-color: var(--color-black);
-}
-
-#logo {
-    color: var(--color-white);
-    text-decoration: none;
-}
-
-h1 {
-    color: var(--color-white);
-    text-decoration: underline 3px var(--color-primary);
-}
-
-h2 {
-    color: var(--color-white);
-}
-
-.h2--black {
-    color: var(--color-black);
-}
-
-p {
-    color: var(--color-white);
-}
-
-.p--black {
-    color: var(--color-black);
-}
-
-.p--secondary {
-    color: var(--color-secondary);
-}
-
-input::placeholder {
-    color: var(--color-secondary);
-}
-
-.button {
-    color: var(--color-white);
-    border-radius: 1rem;
-}
-
-.button--primary {
-    border: 2px solid;
-    border-color: var(--color-primary);
-}
-
-.button:hover{
-    color: var(--color-primary);
-}
-
-.button--primary:hover{
-    color: var(--color-black);
-    background:var(--color-primary);
-}
-
-.button--secondary {
-    color: var(--color-black);
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-}
-
-.button--secondary:hover, .button--white:hover {
-    color: var(--color-white);
-    background-color: var(--color-black);
-}
-
-.button--white {
-    color: var(--color-black);
-    background-color: var(--color-white);
-    border-color: var(--color-primary);
-}
-
-.foodCard-container img {
-    border: 3px solid var(--color-primary);
-    border-radius: 0.5rem;
-}
-
-.foodDetails {
-    background-color: var(--color-white);
-    border: 3px solid var(--color-primary);
-    border-radius:1rem;
-    -webkit-box-shadow:  0 0 0 100vh rgba(0, 0, 0, 0.7);
-    box-shadow:  0 0 0 100vh rgba(0, 0, 0, 0.7);
-}
-
-li:has(input[type="radio"]) {
-    border: 2px solid var(--color-primary);
-    border-radius: 1rem;
-    margin:1rem;
-}
-
-.bookForm-container{ /* PC container */
-    background-color: var(--color-white);
-    color:var(--color-black);
-    border: 3px solid;
-    border-color: var(--color-primary);
-    border-radius: 1rem;
-  }
-
-.info-container {
-    color:var(--color-black);
-    border: 3px solid;
-    border-color: var(--color-black);
-    border-radius: 0.5rem;
-}
-
-.formInputs:invalid {
-    border: 2px solid;
-    border-color: var(--color-error);
-}
-
-.formInputs:focus {
-    box-shadow: 0px 0px 5px var(--color-secondary);
-}
-
-.errorMessage {
-    color: var(--color-error);
-}
-
-.spinner {
-    border: 6px solid var(--color-secondary);
-    border-top: 6px solid var(--color-primary);
-}
+    --color-black: #1c1a17;
+    --color-white: #FFFFFF;
+    --color-primary: #F29D35;
+    --color-secondary: #7F7F7F;
+    --color-error: #F23535;
+    }
+    
+    body{
+        background-color: var(--color-black);
+    }
+    
+    #navPage{
+        background-color: var(--color-black);
+    }
+    
+    .nextPageField {
+        background-color: var(--color-black);
+    }
+    
+    #logo {
+        color: var(--color-white);
+        text-decoration: none;
+    }
+    
+    h1 {
+        color: var(--color-white);
+        text-decoration: underline 3px var(--color-primary);
+    }
+    
+    h2 {
+        color: var(--color-white);
+    }
+    
+    .h2--black {
+        color: var(--color-black);
+    }
+    
+    p {
+        color: var(--color-white);
+    }
+    
+    .p--black {
+        color: var(--color-black);
+    }
+    
+    .p--secondary {
+        color: var(--color-secondary);
+    }
+    
+    input::placeholder {
+        color: var(--color-secondary);
+    }
+    
+    .button {
+        color: var(--color-white);
+        border-radius: 1rem;
+    }
+    
+    .button--primary {
+        border: 3px solid;
+        border-color: var(--color-primary);
+    }
+    
+    .button:hover{
+        color: var(--color-primary);
+    }
+    
+    .button--primary:hover{
+        color: var(--color-black);
+        background:var(--color-primary);
+    }
+    
+    .button--secondary {
+        color: var(--color-black);
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+    
+    .button--secondary:hover, .button--white:hover {
+        color: var(--color-white);
+        background-color: var(--color-black);
+    }
+    
+    .button--white {
+        color: var(--color-black);
+        background-color: var(--color-white);
+        border-color: var(--color-primary);
+    }
+    
+    .foodCard-container img {
+        border: 3px solid var(--color-primary);
+        border-radius: 0.5rem;
+    }
+    
+    #fullMenu {
+        color:var(--color-white);
+        background-color: var(--color-black);
+        border: 3px solid var(--color-primary);
+    }
+    
+    #fullMenu:hover {
+        color:var(--color-black);
+        background-color: var(--color-primary);
+        border: 3px solid var(--color-primary);
+    }
+    
+    
+    .foodDetails {
+        background-color: var(--color-white);
+        border: 3px solid var(--color-primary);
+        border-radius:1rem;
+        -webkit-box-shadow:  0 0 0 100vh rgba(0, 0, 0, 0.7);
+        box-shadow:  0 0 0 100vh rgba(0, 0, 0, 0.7);
+    }
+    
+    li:has(input[type="radio"]) {
+        border: 2px solid var(--color-primary);
+        border-radius: 1rem;
+    }
+    
+    .bookForm-container{ /* PC container */
+        background-color: var(--color-white);
+        color:var(--color-black);
+        border: 3px solid;
+        border-color: var(--color-primary);
+        border-radius: 1rem;
+      }
+    
+    .info-container {
+        color:var(--color-black);
+        border: 3px solid;
+        border-color: var(--color-black);
+        border-radius: 0.5rem;
+    }
+    
+    .formInputs:invalid {
+        border: 2px solid;
+        border-color: var(--color-error);
+    }
+    
+    .formInputs:focus {
+        box-shadow: 0px 0px 5px var(--color-secondary);
+    }
+    
+    .errorMessage {
+        color: var(--color-error);
+    }
+    
+    .spinner {
+        border: 6px solid var(--color-secondary);
+        border-top: 6px solid var(--color-primary);
+    }
+    
+    @media (max-width: 600px){ /* mobile container */
+    .navPage.responsive {
+       background-color: var(--color-black);
+      }
+    }
