@@ -1,572 +1,592 @@
-/* MOBILE LAYOUT */
+/* Basic layout (PC) */
 body{
-  list-style-type: disc;
-  margin-left: 4rem;
-  margin-right:4rem;
-}
-
-#logo {
-margin:1rem 0;
-}
-
-h1 {
-margin-top:0.5rem;
-margin-bottom:1rem;
-}
-
-p {
-max-width:35rem;
-}
-
-form li {
-margin-bottom:0.5rem;
-}
-
-/*layout alignment styles */
-.cluster {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: center;
-flex-direction: row;
-flex:1 1;
-}
-
-.stack {
-display: flex;
-flex-direction: column;
-justify-content: center;
-height:100%;
-}
-
-.stack > * + * {
-margin-top: 1rem;
-}
-
-.centre {
-display: flex;
-justify-content: center;
-}
-
-.rt {
-text-align:right;
-}
-
-.horizontal {
-display:flex;
-flex-direction:row;
-vertical-align: middle;
-}
-
-.grid{
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-grid-gap: 1rem;
-overflow-x: auto;
-max-height: 60vh;
-padding-left:0.5rem;
-padding-right:0.5rem;
-}
-
-/* Hide scrollbar for grid layout */
-.grid::-webkit-scrollbar{
-display: none;
-}
-
-#fullMenu {
-vertical-align: middle;
-text-decoration:none;
-display: flex;
-justify-content: center;
-text-align: center;
-align-items: center;
-border-radius: 0.5rem;
-margin:0 1rem 1.5rem 1rem;
-animation: slideUp 1.5s;
-}
-
-.foodCard-container {
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-flex-direction: column;
-animation: slideUp 1.5s;
-}
-
-.foodCard-container img, .foodDetails-container img{
-max-width: 240px;
-max-height: 240px;
-border-radius: 0.5rem;
-margin:0.2rem;
-}
-
-.foodCard-container:hover {
-transform: rotate(5deg);
-transition:0.3s;
-}
-
-.foodDetails-container {
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: center;
-text-align: center;
-overflow-x: scroll;
-border-radius:0.5rem;
-}
-
-.foodDetails {
-display: none;
-position: fixed;
-top:50%;
-left:50%;
-transform: translate(-50%, -50%);
-max-width:60%;
-max-height:80%;
-padding:1rem 2rem 3rem 2rem;
-align-items: center;
-}
-
-/*navigation layout*/
-.navPage{
-overflow:hidden;
-}
-
-.navBar{
-display:flex;
-flex-wrap:wrap;
-justify-content: flex-end;
-text-align: center;
-align-items: center;
-padding-top:1rem;
-z-index: 9999;
-}
-
-.navButton {
-display:none; /*Hide burger icon in large screen*/
-}
-
-.closeNavButton {
-display:none;
-position:absolute;
-margin-top:1rem;
-right:0;
-top:0;
-}
-
-.show {
-display:block;
-}
-
-.hide {
-display:none;
-}
-
-/*Home page slideshow layout*/
-.slideContainer{
-display: flex;
-overflow: hidden; 
-object-fit: cover;
-width: 100vw;
-height: 60vh;
-margin-left:-4rem;
-}
-
-.slideImages {
-display: none;
-width: 100%;
-height: 100%;
-object-fit:cover;
-}
-
-.slideImages.show {
-  display: block;
-  animation-name: fadeIn;
-  animation-duration: 0.6s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-h1,.slideUp h2{
-animation: slideUp 0.8s;
-}
-
-.slideUp p, .slideUp svg {
-  animation: slideUp 1s;
+    list-style-type: disc;
+    margin-left: 4rem;
+    margin-right:4rem;
   }
 
-.slideUp img{
-animation: slideUp 1.2s;
-}
-
-.spinner {
-  border-radius: 60%;
-  width: 3rem;
-  height: 3rem;
-  animation: spin 1.5s linear infinite; /* Apply rotation animation */
-  margin: auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg); /* Starting position */
+  #logo {
+  margin:1rem 0;
   }
-  100% {
-    transform: rotate(360deg); /* Ending position */
+
+  h1 {
+  margin-top:0.5rem;
+  margin-bottom:1rem;
   }
-}
 
-/*Image style*/
-.img--full {
-position:absolute;
-object-fit: cover;
-bottom:8vh;
-left:0;
-width: 100%;
-max-height:45vh;
-}
+  p {
+  max-width:35rem;
+  }
 
-.nextPageField {
-display:flex;
-position:fixed;
-bottom: 0;
-left: 0;
-min-width: 100%;
-height:6%;
-align-items: center;
-box-sizing: border-box;
-z-index:-9999;
-}
-
-.nextPageField a{
-animation: slideUp 0.5s ease-in-out;
-}
-
-/*Button style*/
-.button {
-  display: inline-block;
-  text-decoration:none;
-  vertical-align: middle;
-  text-align: center;
-  text-transform:uppercase;
-  padding:0.4rem 0.8rem;
+/*Layout alignment styles */
+  .cluster {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom:0.5rem;
-}
+  flex-direction: row;
+  flex:1 1;
+  }
 
-.button--primary {
-padding: 0.4rem 1rem;
-}
-
-.button--secondary, .button--white {
-padding: 0.4rem 2rem;
-margin-left:0.5rem;
-margin-right:0.5rem;
-}
-
-.icon {
-vertical-align:middle;
-align-items:center;
-}
-
-.icon--small {
-display:inline-flex;
-flex-direction:row;
-margin-right:0.5rem;
-width:20px;
-height:20px;
-}
-
-.icon--large {
-max-height:1.5rem;
-}
-
-.icon--rt{
-justify-content: flex-end;
-}
-
-.svgbox {
-display:block;
-}
-
-.svginput {
-position: relative;
-display: inline-block;
-}
-
-.svgbox svg{
-height: 1rem;
-width: 1rem;
-position: absolute;
-top: 0;
-bottom: 0;
-padding-left:0.5rem;
-margin: auto;
-}
-
-.svgtext {
-display: block;
-padding: 0.5rem 2rem;         
-}
-
-.line-container {
-width: 100%;
-height:0.2rem;
-}
-
-.bookForm-container{ /* PC container */
-max-width: 70vh;
-max-height:90vh;
-padding: 2rem;
-margin:1rem;
-}
-
-.info-container {
-display:flex;
-flex-direction:column;
-max-width: 60vh;
-max-height:50vh;
-overflow:scroll;
-padding: 0.5rem 1rem;
-margin-bottom:0.5rem;
-}
-
-#step1 {
-display:block;
-}
-
-#step2 {
-display:none;
-}
-
-#step3 {
-display:none;
-}
-
-#step4 {
-display:none;
-}
-
-#step5{
-display:none;
-}
-
-#step6{
-display:none;
-}
-
-#step7{
-display:none;
-}
-
-#step8{
-display:none;
-}
-
-label {
-text-align:left;
-display:flex;
-flex-direction:row;
-margin-bottom:0.1rem;
-}
-
-.errorMessage {
-display:none;
-text-align:left;
-position:relative;
-margin-top:0.2rem;
-}
-
-select, textarea, input[type="text"], [type="tel"], [type="email"], [type="date"], [type="number"],[type="month"] {
-text-align: left;
-border: 2px solid;
-border-radius:0.5rem;
-display:flex;
-padding:0.5rem 1rem;
-}
-
-input[type="radio"] {
-transform: scale(1.5);
-border: 2px solid;
-padding:1rem 2rem;
-margin:1.5rem 1rem;
-}
-
-li:has(input[type="radio"]) {
-margin:1rem;
-}
-
-input[type="checkbox"]{
-transform: scale(1.5);
-padding:0.5rem 1rem;
-}
-
-textarea {
-max-width:90%;
-min-width: 90%;
-min-height:1rem;
-max-height:2em;
-overflow:scroll;
-}
-
-.backgroundPhoto {
-display:none;
-}
-
-@media (min-width: 900px){ /*Display a background image in large screen */
-.backgroundPhoto {
-display:block;
-position:absolute;
-bottom:0;
-right:0;
-width:45vw;
-height:100vh;
-object-fit: cover;
-overflow: hidden;
-opacity: 0.4;
-z-index: -1;
-}
-
-}
-
-/*Finds Us Page Content*/
-.contactInfo {
-padding-left:1rem;
-}
-
-.contactInfo p{
-line-height:1.5rem;
-margin:0rem 1rem 1rem 1rem;
-padding-left:1rem;
-}
-
-.contactInfo ul {
-max-width:18rem;
-}
-
-#map {
-display:flex;
-flex-direction: row;
-margin-bottom:3.5rem;
-}
-
-/* Adjustment for mobile website */
-@media (max-width: 600px){ 
-body{
-  list-style-type: disc;
-  margin-left: 1.5rem;
-  margin-right:1.5rem;
-}
-
-.slideContainer{
-  margin-left:-1.5rem;
-}
-
-.bookForm-container{
-  padding: 1rem;
-  overflow-y: scroll;
-  max-width: 95vh;
-  max-height:90vh;
-  margin:0.5rem;
-}
-
-.grid{
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  grid-gap: 1rem;
-  max-height: 60vh;
-  padding-top: 0.5rem;
-  margin-bottom:3rem;
-}
-
-.foodCard-container {
-  width: 140px; 
-  height: 140px; 
+  .stack {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height:100%;
+  }
+
+  .stack > * + * {
+  margin-top: 1rem;
+  }
+
+  .centre {
+  display: flex;
+  justify-content: center;
+  }
+
+  .rt {
+  text-align:right;
+  }
+
+  .horizontal {
+  display:flex;
+  flex-direction:row;
+  vertical-align: middle;
+  }
+
+  .grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 1rem;
+  overflow-x: auto;
+  max-height: 60vh;
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+  }
+
+/* Hide scrollbar for grid layout */
+  .grid::-webkit-scrollbar{
+  display: none;
+  }
+
+/*Our Foods Page - food display*/
+  #fullMenu {
+  vertical-align: middle;
+  text-decoration:none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin:0 1rem 1.5rem 1rem;
+  animation: slideUp 1.5s;
+  }
+
+  .foodCard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  animation: slideUp 1.5s;
+  }
+
+  .foodCard-container img, .foodDetails-container img{
+  max-width: 240px;
+  max-height: 240px;
+  border-radius: 0.5rem;
+  margin:0.2rem;
+  }
+
+  .foodCard-container:hover {
+  transform: rotate(5deg);
+  transition:0.3s;
+  }
+
+  .foodDetails-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-}
+  overflow-x: scroll;
+  border-radius:0.5rem;
+  }
 
-.foodCard-container img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 0.5rem;
-  margin-bottom:0.2rem;
-}
+  .foodDetails {
+  display: none;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  max-width:60%;
+  max-height:80%;
+  padding:1rem 2rem 3rem 2rem;
+  align-items: center;
+  }
 
-.navButton {
-  float:right;
-  display:block;
-}
 
-.navBar {
-  display:none;
-}
+/*navigation layout*/
+  .navPage{
+  overflow:hidden;
+  }
 
-.navPage.responsive {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
+  .navBar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+  padding-top:1rem;
   z-index: 9999;
-}
+  }
 
-.navPage.responsive li a{
-  float:none;
-  display:block;
-  text-align:center;
-  margin:3rem;
-}
+  .navButton {
+  display:none; /*Hide burger icon in large screen*/
+  }
 
-.navPage.responsive .navBar{
-  float:none;
-  display:block;
-  text-align:left;
-  margin-top:1rem;
-}
-
-.navPage.responsive .navButton {
-  position:relative;
+  .closeNavButton {
+  display:none;
+  position:absolute;
   margin-top:1rem;
   right:0;
   top:0;
-}
-.navPage.responsive .closeNavButton{
-    margin:1rem 1.5rem;
+  }
+
+  .show {
+  display:block;
+  }
+
+  .hide {
+  display:none;
+  }
+
+/*Home page slideshow layout*/
+  .slideContainer{
+  display: flex;
+  overflow: hidden; 
+  object-fit: cover;
+  width: 100vw;
+  height: 60vh;
+  margin-left:-4rem;
+  }
+
+  .slideImages {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  }
+
+  .slideImages.show {
+    display: block;
+    animation-name: fadeIn;
+    animation-duration: 0.6s;
+  }
+
+/*Animations and animation time adjustment*/
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideRight {
+    0% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg); /* Starting position */
+    }
+    100% {
+      transform: rotate(360deg); /* Ending position */
+    }
+  }
+
+  h1,.slideUp h2, .slideUp a{
+  animation: slideUp 0.8s;
+  }
+
+  .slideUp p, .slideUp svg {
+    animation: slideUp 1s;
+    }
+
+  .slideUp img{
+  animation: slideUp 1.2s;
+  }
+
+/*Spinner icon in payment processing*/
+  .spinner {
+    border-radius: 60%;
+    width: 3rem;
+    height: 3rem;
+    animation: spin 1.5s linear infinite; /* Apply rotation animation */
+    margin: auto;
+  }
+
+/*Image style*/
+  .img--full {
+  position:absolute;
+  object-fit: cover;
+  bottom:8vh;
+  left:0;
+  width: 100%;
+  max-height:45vh;
+  }
+
+/*Next page button at the bottom*/
+  .nextPageField {
+  display:flex;
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  min-width: 100%;
+  height:6%;
+  align-items: center;
+  box-sizing: border-box;
+  z-index:-9999;
+  }
+
+  .nextPageField a{
+  animation: slideUp 0.5s ease-in-out;
+  }
+
+/*Button styles*/
+  .button {
+    display: inline-block;
+    text-decoration:none;
+    vertical-align: middle;
+    text-align: center;
+    text-transform:uppercase;
+    padding:0.4rem 1rem;
+    align-items: center;
+    margin-bottom:0.5rem;
+  }
+
+  .button--primary {
+  padding: 0.4rem 1rem;
+  }
+
+  .button--secondary, .button--white {
+  padding: 0.4rem 2rem;
+  margin-left:0.5rem;
+  margin-right:0.5rem;
+  }
+
+  /* Icon layout*/
+  .icon {
+  vertical-align:middle;
+  align-items:center;
+  }
+
+  .icon--small {
+  display:inline-flex;
+  flex-direction:row;
+  margin-right:0.5rem;
+  width:20px;
+  height:20px;
+  }
+
+  .icon--large {
+  max-height:1.5rem;
+  }
+
+  .icon--rt{
+  justify-content: flex-end;
+  }
+
+/* svg layout */
+  .svgbox {
+  display:block;
+  }
+
+  .svginput {
+  position: relative;
+  display: inline-block;
+  }
+
+  .svgbox svg{
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-left:0.5rem;
+  margin: auto;
+  }
+
+  .svgtext {
+  display: block;
+  padding: 0.5rem 2rem;         
+  }
+
+  .line-container {
+  width: 100%;
+  height:0.2rem;
+  }
+
+/* Book form layout */
+  /* PC form container */
+  #step1 {
+    display:block;
+    }
+  
+    #step2 {
+    display:none;
+    }
+  
+    #step3 {
+    display:none;
+    }
+  
+    #step4 {
+    display:none;
+    }
+  
+    #step5{
+    display:none;
+    }
+  
+    #step6{
+    display:none;
+    }
+  
+    #step7{
+    display:none;
+    }
+  
+    #step8{
+    display:none;
+    }
+  
+  .bookForm-container{ 
+  max-width: 70vh;
+  padding: 2rem;
+  margin:1rem;
+  }
+
+  form h2 {
+    animation: slideRight 0.6s;
+  }
+
+  form ul, form p{
+    animation: slideRight 1s;
+  }
+
+  .info-container {
+  display:flex;
+  flex-direction:column;
+  max-width: 60vh;
+  max-height:50vh;
+  overflow-y:scroll;
+  padding: 0.5rem 1rem;
+  margin-bottom:0.5rem;
+  }
+
+  label {
+  text-align:left;
+  display:flex;
+  flex-direction:row;
+  margin-bottom:0.1rem;
+  }
+
+  .errorMessage {
+  display:none;
+  text-align:left;
+  position:relative;
+  margin-top:0.2rem;
+  }
+
+  select, textarea, input[type="text"], [type="tel"], [type="email"], [type="date"], [type="number"],[type="month"] {
+  text-align: left;
+  border: 2px solid;
+  border-radius:0.5rem;
+  display:flex;
+  padding:0.5rem 1rem;
+  }
+
+  input[type="radio"] {
+  transform: scale(1.5);
+  border: 2px solid;
+  padding:1rem 2rem;
+  margin:1.5rem 1rem;
+  }
+
+  form li {
+    margin-bottom:0.5rem;
+  }
+
+  li:has(input[type="radio"]) {
+  margin:1rem;
+  }
+
+  input[type="checkbox"]{
+  transform: scale(1.5);
+  padding:0.5rem 1rem;
+  }
+
+  textarea {
+  max-width:90%;
+  min-width: 90%;
+  min-height:1rem;
+  max-height:2em;
+  overflow:scroll;
+  }
+
+  .backgroundPhoto {
+  display:none;
+  }
+
+  /*Display a background image in PC large screen */
+  @media (min-width: 900px){ 
+  .backgroundPhoto {
+  display:block;
+  position:fixed;
+  bottom:0;
+  top:0;
+  right:0;
+  width:45vw;
+  height:100vh;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: -1;
+  }
+
 }
 
-.navPage.responsive #logo{
-  margin:1rem 1.5rem;
-}
-}
+/*Finds Us Page layout*/
+  .contactInfo {
+  padding-left:1rem;
+  }
+
+  .contactInfo p, .contactInfo a{
+  line-height:1.5rem;
+  margin:0rem 1rem 1rem 1rem;
+  padding-left:1rem;
+  }
+
+  .contactInfo ul {
+  max-width:18rem;
+  }
+
+  #map {
+  display:flex;
+  flex-direction: row;
+  margin-bottom:3.5rem;
+  animation:slideUp 2s;
+  }
+
+
+/* Responsive layout adjustment for mobile website */
+  @media (max-width: 600px){ 
+  body{
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-right:1.5rem;
+  }
+
+  .slideContainer{
+    margin-left:-1.5rem;
+  }
+
+  .bookForm-container{
+    padding: 1rem;
+    overflow-y: scroll;
+    max-width: 95vh;
+    max-height:90vh;
+    margin:0.5rem;
+  }
+
+  .grid{
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-gap: 1rem;
+    max-height: 60vh;
+    padding-top: 0.5rem;
+    margin-bottom:3rem;
+  }
+
+  .foodCard-container {
+    width: 140px; 
+    height: 140px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foodCard-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0.5rem;
+    margin-bottom:0.2rem;
+  }
+
+  .navButton {
+    float:right;
+    display:block;
+  }
+
+  .navBar {
+    display:none;
+  }
+
+  .navPage.responsive {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+
+  .navPage.responsive li a{
+    float:none;
+    display:block;
+    text-align:center;
+    margin:3rem;
+  }
+
+  .navPage.responsive .navBar{
+    float:none;
+    display:block;
+    text-align:left;
+    margin-top:1rem;
+  }
+
+  .navPage.responsive .navButton {
+    position:relative;
+    margin-top:1rem;
+    right:0;
+    top:0;
+  }
+  .navPage.responsive .closeNavButton{
+      margin:1rem 1.5rem;
+  }
+
+  .navPage.responsive #logo{
+    margin:1rem 1.5rem;
+  }
+  }
 

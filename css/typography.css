@@ -1,6 +1,6 @@
 
 
-
+/* Define website typography size/weight */
 :root {
     font-family: "Bahnschrift";
 
@@ -10,12 +10,13 @@
     --font-weight-bold:800;
 
     /* typography scale */
-    font-size: 18px;
+    font-size: 17px;
     --text-size: 1rem;
     --text-size-l: 1.3rem;
-    --text-size-xl: 1.8rem;
+    --text-size-xl: 1.6rem;
 }
 
+/* Basic typo */
 body {
     font-family: "Bahnschrift";
 }

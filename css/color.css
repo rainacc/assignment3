@@ -1,11 +1,13 @@
-:root {
-    --color-black: #1c1a17;
-    --color-white: #FFFFFF;
-    --color-primary: #F29D35;
-    --color-secondary: #7F7F7F;
-    --color-error: #F23535;
+/* Define website colour palette */
+    :root {
+        --color-black: #1c1a17;
+        --color-white: #FFFFFF;
+        --color-primary: #F29D35;
+        --color-secondary: #7F7F7F;
+        --color-error: #F23535;
     }
-    
+
+/* Basic colours */
     body{
         background-color: var(--color-black);
     }
@@ -23,6 +25,7 @@
         text-decoration: none;
     }
     
+
     h1 {
         color: var(--color-white);
         text-decoration: underline 3px var(--color-primary);
@@ -52,6 +55,7 @@
         color: var(--color-secondary);
     }
     
+/* Button colours */
     .button {
         color: var(--color-white);
         border-radius: 1rem;
@@ -88,6 +92,7 @@
         border-color: var(--color-primary);
     }
     
+/* Our Foods page */
     .foodCard-container img {
         border: 3px solid var(--color-primary);
         border-radius: 0.5rem;
@@ -105,7 +110,6 @@
         border: 3px solid var(--color-primary);
     }
     
-    
     .foodDetails {
         background-color: var(--color-white);
         border: 3px solid var(--color-primary);
@@ -114,12 +118,13 @@
         box-shadow:  0 0 0 100vh rgba(0, 0, 0, 0.7);
     }
     
+    /* Book form coluors */
     li:has(input[type="radio"]) {
         border: 2px solid var(--color-primary);
         border-radius: 1rem;
     }
     
-    .bookForm-container{ /* PC container */
+    .bookForm-container{
         background-color: var(--color-white);
         color:var(--color-black);
         border: 3px solid;
@@ -152,7 +157,8 @@
         border-top: 6px solid var(--color-primary);
     }
     
-    @media (max-width: 600px){ /* mobile container */
+/* mobile container */
+@media (max-width: 600px){ 
     .navPage.responsive {
        background-color: var(--color-black);
       }
