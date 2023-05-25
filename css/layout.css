@@ -48,6 +48,11 @@ body{
   text-align:right;
   }
 
+  .bottom{
+    position: absolute;
+    bottom: 10%;
+  }
+
   .horizontal {
   display:flex;
   flex-direction:row;
@@ -169,7 +174,7 @@ body{
   overflow: hidden; 
   object-fit: cover;
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
   margin-left:-4rem;
   }
 
