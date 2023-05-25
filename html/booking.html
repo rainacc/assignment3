@@ -43,7 +43,7 @@
         <p class="fillAllErrorMessage errorMessage">*Please fill in all fields.</p>
         <ul>
             <li><label for="guests-id">Guest Number</label>
-                <select id="guests-id" class="formInputs" onchange="calBookFee(this.value)">
+                <select id="guests-id" class="formInputs" onchange="calBookFee()">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -71,11 +71,11 @@
             </svg>
             <div class="cluster">
             <h2 class="h2--black">Booking Fee:</h2>
-            <h2 id="bookFee" class="h2--black bookFee">$0.00</h2>
+            <h2 id="bookFee" class="h2--black bookFee">$1.10</h2>
             </div>
             <p class="p--secondary rt"> (GST Included)</p>
          <div class="rt">
-            <button type="button" class="button button--secondary" onclick="if (validateForm(1)) nextBookStep(1)">NEXT</button>
+            <button type="button" class="button button--secondary" onclick="if (validateForm(1)) calBookFee(), nextBookStep(1)">NEXT</button>
         </div>
     </form>
 
@@ -208,7 +208,7 @@
         </div>
         <div class="cluster">
                 <li><label for="post-id">Postal/ZIP Code</label>
-                    <input id="post-id" type="tel" class="formInputs" placeholder="0000" pattern="[0-9]{4}" maxlength="4" autocomplete="postal-code">
+                    <input id="post-id" type="tel" class="formInputs" placeholder="0000" pattern="[0-9]{4}" maxlength="4" autocomplete="postal-code" onchange="validatePattern('post-id', 'postErrorMessage')">
                     <p id="postErrorMessage" class="errorMessage">Please input valid postcode. e.g. 3000</p></li>
 
                 <li><label for = "country-id">Country</label>
