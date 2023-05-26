@@ -2,7 +2,6 @@
 @font-face {
     font-family: "Bahnschrift";
     src: url('../font/bahnschrift.ttf') format("truetype");
-    font-style:normal;
   }
 
 /* Define website typography size/weight */
@@ -10,7 +9,7 @@
     /* font weighting */
     --font-weight-reg: 100;
     --font-weight-semibold:400;
-    --font-weight-bold:800;
+    --font-weight-bold:600;
 
     /* typography scale */
     font-size: 17px;
@@ -33,6 +32,7 @@ h1 {
     font-size: var(--text-size-xl);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
+    text-decoration: underline;
     text-underline-offset: 10px;
     font-stretch: semi-condensed;
 }
@@ -48,6 +48,7 @@ p {
     font-weight: var(--font-weight-reg);
     font-stretch: semi-condensed;
     line-height: 1.4;
+    text-decoration:none;
 }
 
 ::placeholder {
