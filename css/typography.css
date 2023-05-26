@@ -2,14 +2,11 @@
 @font-face {
     font-family: "Bahnschrift";
     src: url('../font/bahnschrift.ttf') format("truetype");
-    font-weight: normal;
-    font-style: normal;
+    font-style:normal;
   }
 
 /* Define website typography size/weight */
 :root {
-    font-family: "Bahnschrift";
-
     /* font weighting */
     --font-weight-reg: 100;
     --font-weight-semibold:400;
@@ -37,19 +34,19 @@ h1 {
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     text-underline-offset: 10px;
-    font-stretch: condensed;
+    font-stretch: semi-condensed;
 }
 
 h2 {
     font-size: var(--text-size-l);
     font-weight: var(--font-weight-semibold);
-    font-stretch: condensed;
+    font-stretch: semi-condensed;
 }
 
 p {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
-    font-stretch: condensed;
+    font-stretch: semi-condensed;
     line-height: 1.4;
 }
 
@@ -57,11 +54,12 @@ p {
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
     margin-left:1rem;
+    font-stretch: semi-condensed;
 }
 
 input, select, textarea {
     font-family: "Bahnschrift";
-    font-stretch: condensed;
+    font-stretch: semi-condensed;
     font-size: var(--text-size);
     font-weight: var(--font-weight-reg);
 }
@@ -69,12 +67,12 @@ input, select, textarea {
 .button {
     font-size: var(--text-size-l);
     font-weight: var(--font-weight-semibold);
-    font-stretch: condensed;
+    font-stretch: semi-condensed;
     font-family: "Bahnschrift";
 }
 
 #fullMenu {
     font-size: var(--text-size-l);
     font-weight: var(--font-weight-semibold);
-    font-stretch: condensed;
+    font-stretch: semi-condensed;
 }
