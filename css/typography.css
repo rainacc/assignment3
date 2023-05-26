@@ -8,7 +8,7 @@
 :root {
     /* font weighting */
     --font-weight-reg: 100;
-    --font-weight-semibold:400;
+    --font-weight-semibold:500;
     --font-weight-bold:600;
 
     /* typography scale */
@@ -21,6 +21,7 @@
 /* Basic typo */
 body {
     font-family: "Bahnschrift";
+    text-decoration: none;
 }
 
 #logo {
@@ -32,7 +33,6 @@ h1 {
     font-size: var(--text-size-xl);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
-    text-decoration: underline;
     text-underline-offset: 10px;
     font-stretch: semi-condensed;
 }
