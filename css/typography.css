@@ -33,7 +33,6 @@ h1 {
     font-size: var(--text-size-xl);
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
-    text-underline-offset: 10px;
     font-stretch: semi-condensed;
 }
 
