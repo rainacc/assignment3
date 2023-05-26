@@ -28,8 +28,8 @@
 
     h1 {
         color: var(--color-white);
-        text-decoration: underline 3px var(--color-primary);
-        text-underline-offset: 10px;
+        border-bottom: underline 3px var(--color-primary);
+        margin-bottom: 10px;
     }
     
     h2 {
