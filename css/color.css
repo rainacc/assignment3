@@ -28,9 +28,8 @@
 
     h1 {
         color: var(--color-white);
-        border-bottom: underline 3px;
-        border-bottom-color: var(--color-primary);
-        margin-bottom: 10px;
+        text-decoration: underline 3px #F29D35;
+        text-underline-offset: 10px;
     }
     
     h2 {
