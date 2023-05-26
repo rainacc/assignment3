@@ -28,7 +28,7 @@
 
     h1 {
         color: var(--color-white);
-        text-decoration: underline 3px #F29D35;
+        text-decoration: underline 3px var(--color-primary);
         text-underline-offset: 10px;
     }
     
