@@ -1,4 +1,10 @@
 
+@font-face {
+    font-family: "Bahnschrift";
+    src: url('../font/bahnschrift.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
 
 /* Define website typography size/weight */
 :root {
