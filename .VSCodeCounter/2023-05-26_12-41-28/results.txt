@@ -1,0 +1,44 @@
+Date : 2023-05-26 12:41:28
+Directory : e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code
+Total : 13 files,  1650 codes, 101 comments, 259 blanks, all 2010 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |          4 |        739 |         37 |        144 |        920 |
+| HTML       |          5 |        669 |         27 |         67 |        763 |
+| JavaScript |          3 |        241 |         37 |         47 |        325 |
+| Markdown   |          1 |          1 |          0 |          1 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                  | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                     |         13 |      1,650 |        101 |        259 |      2,010 |
+| . (Files)                                                                             |          1 |          1 |          0 |          1 |          2 |
+| css                                                                                   |          4 |        739 |         37 |        144 |        920 |
+| html                                                                                  |          5 |        669 |         27 |         67 |        763 |
+| js                                                                                    |          3 |        241 |         37 |         47 |        325 |
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                              | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\README.md          | Markdown   |          1 |          0 |          1 |          2 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\css\color.css      | CSS        |        130 |          6 |         31 |        167 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\css\layout.css     | CSS        |        501 |         21 |         99 |        621 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\css\reset.css      | CSS        |         42 |          5 |          1 |         48 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\css\typography.css | CSS        |         66 |          5 |         13 |         84 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\html\about.html    | HTML       |         52 |          3 |          4 |         59 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\html\booking.html  | HTML       |        342 |         12 |         31 |        385 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\html\findUs.html   | HTML       |         88 |          0 |          7 |         95 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\html\index.html    | HTML       |         54 |          5 |          3 |         62 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\html\ourFoods.html | HTML       |        133 |          7 |         22 |        162 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\js\booking.js      | JavaScript |        191 |         34 |         38 |        263 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\js\foodMenu.js     | JavaScript |          8 |          0 |          2 |         10 |
+| e:\学校\UniMelb\2023Sem1\User Interface Development\Assignment3\code\js\interaction.js  | JavaScript |         42 |          3 |          7 |         52 |
+| Total                                                                                 |            |      1,650 |        101 |        259 |      2,010 |
++---------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

@@ -272,7 +272,7 @@ body{
   height:6%;
   align-items: center;
   box-sizing: border-box;
-  z-index:-9999;
+  z-index:999;
   }
 
   .nextPageField a{
@@ -515,7 +515,7 @@ body{
   #map {
   display:flex;
   flex-direction: row;
-  margin-bottom:3.5rem;
+  margin-bottom:4rem;
   max-width: 100%;
   animation:slideUp 2s;
   }

@@ -30,6 +30,7 @@
         color: var(--color-white);
         text-decoration: underline 3px var(--color-primary);
         text-underline-offset: 10px;
+        -webkit-text-decoration: underline var(--color-primary);
     }
     
     h2 {

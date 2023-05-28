@@ -5,5 +5,5 @@ function showFood(foodId){
 
 function hideFood(foodId){
     document.getElementById(foodId).style.display ="none";
-    document.getElementsByClassName('nextPageField')[0].style.display = "block";
+    document.getElementsByClassName('nextPageField')[0].style.display = "flex";
  }
