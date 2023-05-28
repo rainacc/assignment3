@@ -531,6 +531,7 @@ body{
 
   .slideContainer{
     margin-left:-1.5rem;
+    height:55vh;
   }
 
   .bookForm-container{
@@ -547,6 +548,11 @@ body{
     max-height: 60vh;
     padding-top: 0.5rem;
     margin-bottom:3rem;
+  }
+  
+  .bottom {
+    position:relative;
+    margin-bottom:2rem;
   }
 
   .foodCard-container {
